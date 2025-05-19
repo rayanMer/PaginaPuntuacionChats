@@ -1,0 +1,20 @@
+const Historial = () => {
+  return (
+    <div className="historial-container bg-[var(--color-light-green)] h-screen grid grid-rows-12">
+      <div className="row-start-2 col-span-11 row-span-11 grid grid-rows-12">
+        <div className="flex flex-row justify-around">
+            <span className="bg-[var(--color-dark-green)] w-15 h-8 items-center text-white">Volver</span>
+            <h1>Página de historial de valoraciones</h1>
+        </div>
+        <div className="cards-container row-span-11">
+            <div className="card-ejemplo bg-white rounded-md h-75 w-75 grid grid-rows-5">
+                <img src="images/card.png" className="row-span-4" />
+                <div>h</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Historial;
