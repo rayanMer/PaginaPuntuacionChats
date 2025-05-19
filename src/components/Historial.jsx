@@ -7,9 +7,9 @@ const Historial = () => {
             <h1>Página de historial de valoraciones</h1>
         </div>
         <div className="cards-container row-span-11">
-            <div className="card-ejemplo bg-white rounded-md h-75 w-75 grid grid-rows-5">
-                <img src="images/card.png" className="row-span-4" />
-                <div>h</div>
+            <div className="card-ejemplo bg-white rounded-md h-75 w-60 grid grid-rows-8">
+                <div className="row-span-7"><img src="images/card.png" className="h-fit w-fit" /></div>
+                <div className="row-span-1 row-start-8 bg-gray-300 items-center align-middle"><p>Ejemplo de fecha</p></div>
             </div>
         </div>
       </div>
