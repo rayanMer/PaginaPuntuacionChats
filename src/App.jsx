@@ -1,14 +1,19 @@
-import './App.css'
-import Historial from './components/Historial'
-import PaginaValoraciones from './components/PaginaValoraciones'
+import { AuthProvider } from './services/login/AuthProvider'
+import LoginPage from "./components/Login"
+
 
 function App() {
   return (
-    <>
-      <PaginaValoraciones/>
-
-      <Historial />
-    </>
+    <AuthProvider>
+      <div>
+        <Routes>
+          <Route
+            path="/login"
+            element={<LoginPage/>}
+          />
+        </Routes>
+      </div>
+    </AuthProvider>
   )
 }
 
