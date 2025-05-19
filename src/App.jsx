@@ -1,11 +1,21 @@
+import { Routes, Route } from 'react-router'
 import './App.css'
-import PaginaValoraciones from './components/PaginaValoraciones'
+import { AuthProvider } from './services/login/AuthProvider'
+import LoginPage from "./components/Login"
+
 
 function App() {
   return (
-    <>
-      <PaginaValoraciones/>
-    </>
+    <AuthProvider>
+      <div>
+        <Routes>
+          <Route
+            path="/login"
+            element={<LoginPage/>}
+          />
+        </Routes>
+      </div>
+    </AuthProvider>
   )
 }
 
