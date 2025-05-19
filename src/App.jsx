@@ -1,10 +1,10 @@
 import './App.css'
-import PaginaValoraciones from './components/PaginaValoraciones'
+import LoginPage from './components/Login'
 
 function App() {
   return (
     <>
-      <PaginaValoraciones/>
+      <LoginPage/>
     </>
   )
 }
