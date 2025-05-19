@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+/* Referencia */
+:root {
+    --color-sapphire: #004CB6;
+    --color-lightest-green: #B5FFC9; 
+    --color-light-green: #9BFFB7;
+    --color-dark-green:#007963;
+    --color-off-white: #EBEBEB;   
+}
+
+@theme {
+    --color-sapphire: #004CB6;
+    --color-lightest-green: #B5FFC9; 
+    --color-light-green: #9BFFB7;
+    --color-dark-green:#007963;
+    --color-off-white: #EBEBEB;   
+}
