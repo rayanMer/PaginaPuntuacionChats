@@ -1,14 +1,19 @@
 import { useState } from "react"
+import { useAuth } from "../services/login/AuthProvider"
+import { useNavigate } from "react-router-dom"
 
 const LoginPage = () => {
     const [userEmail, setUserEmail] = useState("")
     const [error, setError] = useState("")
+    const { login } = useAuth()
+    const navigate = useNavigate()
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     const handleLogin = (e) =>  {
         e.preventDefault()
         if(isEmailValid()) {
-            alert("!Funcion por inplementar!")
+            login(userEmail)
+            navigate("/")
         }
     }
 
