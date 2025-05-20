@@ -1,0 +1,128 @@
+{
+    "conversations": [
+        {
+            "id": 1,
+            "messages":  [
+        {"role": "system", "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."},
+        {"role": "user", "content": "Tengo un paciente masculino de 62 años con disnea progresiva, tos seca y pérdida de peso en los últimos 3 meses."},
+        {"role": "assistant", "content": "¿Tiene antecedentes médicos relevantes? ¿Fumador o exposición ocupacional? ¿Alguna imagen realizada?"},
+        {"role": "user", "content": "Fue fumador hasta hace 5 años. Trabajó en construcción. No antecedentes médicos mayores. Se realizó una radiografía de tórax que mostró infiltrados intersticiales bilaterales."},
+        {"role": "assistant", "content": "¿La disnea es de esfuerzo o también en reposo? ¿Satura adecuadamente en reposo? ¿Hay estertores basales o dedos en palillo de tambor?"},
+        {"role": "user", "content": "Disnea inicialmente de esfuerzo, pero ahora también en reposo. Saturación 90% en aire ambiente. Tiene estertores crepitantes bibasales y dedos en palillo."},
+        {"role": "assistant", "content": "Esto sugiere una enfermedad pulmonar intersticial. Dada la edad, historia ocupacional y radiografía, fibrosis pulmonar idiopática es posible. ¿Se ha hecho una TAC de alta resolución?"},
+        {"role": "user", "content": "Sí, la TAC muestra un patrón en panal de abeja subpleural y predominio basal."},
+        {"role": "assistant", "content": "El patrón en panal de abeja subpleural en un hombre de edad avanzada exfumador es característico de fibrosis pulmonar idiopática (FPI). ¿Se ha evaluado función pulmonar?"},
+        {"role": "user", "content": "Sí, la espirometría muestra patrón restrictivo severo y DLCO reducida al 40% del valor predicho."},
+        {"role": "assistant", "content": "Eso confirma compromiso funcional. Es importante derivar a neumología para valorar tratamiento antifibrótico con pirfenidona o nintedanib. También se debe evaluar para oxigenoterapia domiciliaria."},
+        {"role": "user", "content": "¿Qué pronóstico tiene con tratamiento antifibrótico? ¿Vale la pena iniciarlo en este punto?"},
+        {"role": "assistant", "content": "Los antifibróticos pueden ralentizar la progresión de la enfermedad, aunque no la revierten. Si aún está funcionalmente activo, puede beneficiarse. El pronóstico sin tratamiento es 3-5 años, con tratamiento puede prolongarse ligeramente y mejorar calidad de vida."},
+        {"role": "user", "content": "¿Hay que hacer biopsia pulmonar para confirmar el diagnóstico?"},
+        {"role": "assistant", "content": "No necesariamente. Si el patrón radiológico es típico de FPI y el contexto clínico concuerda, no se requiere biopsia. Se puede hacer el diagnóstico clínico-radiológico con MDT (discusión multidisciplinaria)."},
+        {"role": "user", "content": "Ok. ¿Debo iniciar esteroides mientras se deriva al neumólogo?"},
+        {"role": "assistant", "content": "En FPI, los esteroides no son eficaces y pueden ser perjudiciales. Se deben evitar salvo que se sospeche otra causa inflamatoria o autoinmune. No los inicie si el diagnóstico de FPI es probable."},
+        {"role": "user", "content": "¿Y qué vacunas debo asegurarme que reciba?"},
+        {"role": "assistant", "content": "Debe estar vacunado contra influenza anual, neumococo (conjugada y polisacárida según edad) y COVID-19. También considerar vacuna contra pertussis si no ha recibido refuerzo reciente."},
+        {"role": "user", "content": "Gracias. También mencionó pérdida de peso. ¿Debo descartar cáncer?"}, 
+        {"role": "assistant", "content": "Buena observación. Aunque la pérdida de peso puede ser por enfermedad crónica, siempre debe considerarse cáncer en un exfumador. ¿Se ha hecho TAC de tórax con contraste o marcadores tumorales?"}, 
+        {"role": "user", "content": "No aún. Solo TAC de alta resolución. ¿Sugieres repetir con contraste?"}, 
+        {"role": "assistant", "content": "Sí. TAC contrastado de tórax y abdomen superior puede ayudar a descartar neoplasias. También puede considerar broncoscopia si hay dudas o síntomas adicionales."}
+      ],
+            "metrics": {
+                "metric_1": 10,
+                "metric_2": 9,
+                "metric_3": 8,
+                "metric_4": 6
+            }
+        },
+        {
+            "id": 2,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+                },
+                {
+                    "role": "user",
+                    "content": "¿Qué antibiótico recomiendas para una neumonía adquirida en la comunidad?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Para adultos sanos, amoxicilina o doxiciclina son buenas opciones. En pacientes con comorbilidades, se puede considerar amoxicilina-clavulánico más macrólido."
+                },
+                {
+                    "role": "user",
+                    "content": "¿Y en caso de alergia a penicilina?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Doxiciclina o una fluoroquinolona respiratoria como levofloxacino podrían ser adecuadas, dependiendo del perfil del paciente."
+                }
+            ],
+            "metrics": {
+                "metric_1": 9,
+                "metric_2": 8,
+                "metric_3": 7,
+                "metric_4": 7
+            }
+        },
+        {
+            "id": 3,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+                },
+                {
+                    "role": "user",
+                    "content": "Tengo un paciente pediátrico con fiebre persistente de 5 días. ¿Qué sugerencias tienes?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Se debe considerar enfermedad de Kawasaki o una infección viral prolongada. ¿Tiene otros síntomas como exantema, conjuntivitis o cambios en la lengua?"
+                },
+                {
+                    "role": "user",
+                    "content": "Sí, presenta lengua aframbuesada y ojos enrojecidos."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Los síntomas son consistentes con enfermedad de Kawasaki. Recomiendo referir al paciente a un centro especializado para evaluación y posible tratamiento con inmunoglobulina intravenosa."
+                }
+            ],
+            "metrics": null
+        }, {
+      "id": 4,
+      "messages": [
+        {"role": "system", "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."},
+        {"role": "user", "content": "Tengo un paciente masculino de 62 años con disnea progresiva, tos seca y pérdida de peso en los últimos 3 meses."},
+        {"role": "assistant", "content": "¿Tiene antecedentes médicos relevantes? ¿Fumador o exposición ocupacional? ¿Alguna imagen realizada?"},
+        {"role": "user", "content": "Fue fumador hasta hace 5 años. Trabajó en construcción. No antecedentes médicos mayores. Se realizó una radiografía de tórax que mostró infiltrados intersticiales bilaterales."},
+        {"role": "assistant", "content": "¿La disnea es de esfuerzo o también en reposo? ¿Satura adecuadamente en reposo? ¿Hay estertores basales o dedos en palillo de tambor?"},
+        {"role": "user", "content": "Disnea inicialmente de esfuerzo, pero ahora también en reposo. Saturación 90% en aire ambiente. Tiene estertores crepitantes bibasales y dedos en palillo."},
+        {"role": "assistant", "content": "Esto sugiere una enfermedad pulmonar intersticial. Dada la edad, historia ocupacional y radiografía, fibrosis pulmonar idiopática es posible. ¿Se ha hecho una TAC de alta resolución?"},
+        {"role": "user", "content": "Sí, la TAC muestra un patrón en panal de abeja subpleural y predominio basal."},
+        {"role": "assistant", "content": "El patrón en panal de abeja subpleural en un hombre de edad avanzada exfumador es característico de fibrosis pulmonar idiopática (FPI). ¿Se ha evaluado función pulmonar?"},
+        {"role": "user", "content": "Sí, la espirometría muestra patrón restrictivo severo y DLCO reducida al 40% del valor predicho."},
+        {"role": "assistant", "content": "Eso confirma compromiso funcional. Es importante derivar a neumología para valorar tratamiento antifibrótico con pirfenidona o nintedanib. También se debe evaluar para oxigenoterapia domiciliaria."},
+        {"role": "user", "content": "¿Qué pronóstico tiene con tratamiento antifibrótico? ¿Vale la pena iniciarlo en este punto?"},
+        {"role": "assistant", "content": "Los antifibróticos pueden ralentizar la progresión de la enfermedad, aunque no la revierten. Si aún está funcionalmente activo, puede beneficiarse. El pronóstico sin tratamiento es 3-5 años, con tratamiento puede prolongarse ligeramente y mejorar calidad de vida."},
+        {"role": "user", "content": "¿Hay que hacer biopsia pulmonar para confirmar el diagnóstico?"},
+        {"role": "assistant", "content": "No necesariamente. Si el patrón radiológico es típico de FPI y el contexto clínico concuerda, no se requiere biopsia. Se puede hacer el diagnóstico clínico-radiológico con MDT (discusión multidisciplinaria)."},
+        {"role": "user", "content": "Ok. ¿Debo iniciar esteroides mientras se deriva al neumólogo?"},
+        {"role": "assistant", "content": "En FPI, los esteroides no son eficaces y pueden ser perjudiciales. Se deben evitar salvo que se sospeche otra causa inflamatoria o autoinmune. No los inicie si el diagnóstico de FPI es probable."},
+        {"role": "user", "content": "¿Y qué vacunas debo asegurarme que reciba?"},
+        {"role": "assistant", "content": "Debe estar vacunado contra influenza anual, neumococo (conjugada y polisacárida según edad) y COVID-19. También considerar vacuna contra pertussis si no ha recibido refuerzo reciente."},
+        {"role": "user", "content": "Gracias. También mencionó pérdida de peso. ¿Debo descartar cáncer?"}, 
+        {"role": "assistant", "content": "Buena observación. Aunque la pérdida de peso puede ser por enfermedad crónica, siempre debe considerarse cáncer en un exfumador. ¿Se ha hecho TAC de tórax con contraste o marcadores tumorales?"}, 
+        {"role": "user", "content": "No aún. Solo TAC de alta resolución. ¿Sugieres repetir con contraste?"}, 
+        {"role": "assistant", "content": "Sí. TAC contrastado de tórax y abdomen superior puede ayudar a descartar neoplasias. También puede considerar broncoscopia si hay dudas o síntomas adicionales."}
+      ],
+      "metrics": {
+        "metric_1": 10,
+        "metric_2": 10,
+        "metric_3": 9,
+        "metric_4": 9
+      }
+    }
+    ]
+}
