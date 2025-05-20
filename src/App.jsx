@@ -11,22 +11,20 @@ function App() {
       <div>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-
           <Route
             path="/"
             element={
-            
+              <RutasProtegidas>
                 <PaginaValoraciones />
-              
+              </RutasProtegidas> 
             }
           />
-
           <Route
             path="/historial"
             element={
-            
+              <RutasProtegidas>
                 <Historial />
-              
+              </RutasProtegidas>
             }
           />
         </Routes>
