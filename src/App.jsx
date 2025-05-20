@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router";
 import RutasProtegidas from "./services/login/RutasProtegidas";
 import PaginaValoraciones from "./components/PaginaValoraciones";
 import Historial from "./components/Historial";
+import DetalleValoracion from "./components/DetalleValoracion";
 
 function App() {
   return (
@@ -24,6 +25,14 @@ function App() {
             element={
               <RutasProtegidas>
                 <Historial />
+              </RutasProtegidas>
+            }
+          />
+          <Route
+            path="/valoracion/:id"
+            element={
+              <RutasProtegidas>
+                <DetalleValoracion />
               </RutasProtegidas>
             }
           />

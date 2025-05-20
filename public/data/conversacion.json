@@ -263,5 +263,100 @@
         "metric_4": 9
       }
     }
+  ],
+  "valoraciones": [
+    {
+      "id": "chat1",
+      "doctorEmail": "medico1@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "Necesito ayuda para interpretar un ECG anormal en un paciente de 45 años."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Claro, ¿podrías proporcionarme los detalles del ECG y los síntomas del paciente?"
+        },
+        {
+          "sender": "usuario",
+          "text": "El ECG muestra elevación del ST en las derivaciones V2-V4. El paciente tiene dolor torácico."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Esto podría indicar un infarto anterior. Se recomienda evaluación urgente y considerar angiografía coronaria."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-16T14:45:00Z",
+        "scores": {
+          "precision": 10,
+          "claridad": 9,
+          "utilidad_clínica": 8,
+          "empatía": 6
+        }
+      }
+    },
+    {
+      "id": "chat2",
+      "doctorEmail": "medico1@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "¿Qué antibiótico recomiendas para una neumonía adquirida en la comunidad?"
+        },
+        {
+          "sender": "chatBot",
+          "text": "Para adultos sanos, amoxicilina o doxiciclina son buenas opciones. En pacientes con comorbilidades, se puede considerar amoxicilina-clavulánico más macrólido."
+        },
+        {
+          "sender": "usuario",
+          "text": "¿Y en caso de alergia a penicilina?"
+        },
+        {
+          "sender": "chatBot",
+          "text": "Doxiciclina o una fluoroquinolona respiratoria como levofloxacino podrían ser adecuadas, dependiendo del perfil del paciente."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-16T15:00:00Z",
+        "scores": {
+          "precision": 9,
+          "claridad": 8,
+          "utilidad_clínica": 7,
+          "empatía": 7
+        }
+      }
+    },
+    {
+      "id": "chat3",
+      "doctorEmail": "medico2@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "Tengo un paciente pediátrico con fiebre persistente de 5 días. ¿Qué sugerencias tienes?"
+        },
+        {
+          "sender": "chatBot",
+          "text": "Se debe considerar enfermedad de Kawasaki o una infección viral prolongada. ¿Tiene otros síntomas como exantema, conjuntivitis o cambios en la lengua?"
+        },
+        {
+          "sender": "usuario",
+          "text": "Sí, presenta lengua aframbuesada y ojos enrojecidos."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Los síntomas son consistentes con enfermedad de Kawasaki. Recomiendo referir al paciente a un centro especializado para evaluación y posible tratamiento con inmunoglobulina intravenosa."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-16T15:15:00Z",
+        "scores": {
+          "precision": 9,
+          "claridad": 9,
+          "utilidad_clínica": 9,
+          "empatía": 8
+        }
+      }
+    }
   ]
 }

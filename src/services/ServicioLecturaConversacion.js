@@ -1,4 +1,5 @@
 import axios from "axios";
+import http from './axios/http-axios';
 
 const ServicioLecturaConversacion = {
   async obtenerConversaciones() {
@@ -39,6 +40,14 @@ const ServicioLecturaConversacion = {
       console.error('Error al guardar métricas:', error);
       throw error;
     }
+  },
+
+  obtenerValoracionesPorUsuario(user) {
+    return http.get(`/valoraciones?doctorEmail=${user}`)
+  },
+
+  obtenerValoracionesPorId(id) {
+    return http.get(`/valoraciones/${id}`)
   }
 };
 
