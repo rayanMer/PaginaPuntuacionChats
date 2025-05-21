@@ -2,6 +2,7 @@
 
 /* Referencia */
 :root {
+    --color-medium-red: #ef4444;
     --color-sapphire: #004CB6;
     --color-lightest-green: #B5FFC9; 
     --color-light-green: #9BFFB7;
@@ -10,9 +11,23 @@
 }
 
 @theme {
+    --color-medium-red: #ef4444;
     --color-sapphire: #004CB6;
     --color-lightest-green: #B5FFC9; 
     --color-light-green: #9BFFB7;
     --color-dark-green:#007963;
     --color-off-white: #EBEBEB;   
+}
+
+.sweet-alert {
+    background-color: white;
+    border: 1px solid var(--color-sapphire)
+}
+
+.btn-confirmar {
+    background-color: var(--color-medium-red);
+}
+
+.btn-cancelar {
+    background-color: var(--color-sapphire);
 }

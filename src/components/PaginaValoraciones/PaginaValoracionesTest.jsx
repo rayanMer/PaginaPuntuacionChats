@@ -68,9 +68,6 @@ export default function PaginaValoraciones() {
 
   return (
     <div className="min-h-screen bg-lightest-green">
-      {/* Header */}
-      <Header/>
-
       {/* Main content */}
       <div className="flex py-5 gap-15 justify-center">
         {/* Chat pane */}
@@ -83,21 +80,12 @@ export default function PaginaValoraciones() {
             metricas={metricasLocales}
             setMetricas={setMetricasLocales}
           />
-          
-          {/* Botones */}
-          <div className="mt-4 flex justify-end space-x-4">
-            <Link to="/login">
-              <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-                Terminar Valoraciones
-              </button>
-            </Link>
             <button
               onClick={manejarSiguiente}
               className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
             >
               Siguiente
             </button>
-          </div>
         </div>
         </div>
       </div>
