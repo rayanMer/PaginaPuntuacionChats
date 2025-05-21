@@ -1,9 +1,10 @@
 // src/components/PaginaValoraciones.jsx
 import { useEffect, useState } from 'react';
-import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion';
+import ServicioLecturaConversacion from '../../services/ServicioLecturaConversacion';
 import { Link } from 'react-router-dom';
 import PanelConversacion from './PanelConversacion';
-import Header from "./Header";
+import PanelMetricas from './PanelMetricas';
+import Header from "../Header";
 
 export default function PaginaValoraciones() {
   const [conversaciones, setConversaciones] = useState([]);
@@ -13,6 +14,8 @@ export default function PaginaValoraciones() {
   const conversacion = conversaciones[indiceActual];
   const mensajes = conversacion?.messages || [];
   const metricas = conversacion?.metrics || {};
+
+  console.log(metricasLocales)
 
   useEffect(() => {
     const cargarDatos = async () => {
@@ -67,32 +70,6 @@ export default function PaginaValoraciones() {
     <div className="min-h-screen bg-lightest-green">
       {/* Header */}
       <Header/>
-      {/* 
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">
-          Valoración de los chats por: medico1@gmail.com
-        </h1>
-        <Link to="/historial">
-          <button className="flex items-center gap-1 text-blue-600 hover:underline">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 4a1 1 0 011-1h3m10 0h3a1 1 0 011 1v3m0 10v3a1 1 0 01-1 1h-3m-10 0H4a1 1 0 01-1-1v-3"
-              />
-            </svg>
-            Historial
-          </button>
-        </Link>
-      </div>
-      */}
 
       {/* Main content */}
       <div className="flex py-5 gap-15 justify-center">
@@ -100,42 +77,13 @@ export default function PaginaValoraciones() {
         <PanelConversacion mensajes = {mensajes} />
 
         {/* Valoraciones */}
-        <div className="w-1/3 bg-white rounded-lg shadow p-6 flex flex-col justify-between h-[70vh]">
-          <div className="space-y-6">
-            {[
-              { label: 'Precisión diagnóstica', key: 'metric_1' },
-              { label: 'Claridad textual', key: 'metric_2' },
-              { label: 'Fluidez conversacional', key: 'metric_3' },
-              { label: 'Utilidad de las recomendaciones', key: 'metric_4' },
-            ].map(({ label, key }) => (
-              <div key={key}>
-                <label className="block font-medium mb-1">
-                  {label}:{' '}
-                  <span className="text-sm text-gray-500">Selecciona un valor 1–10</span>
-                </label>
-                <div className="flex space-x-2 flex-wrap">
-                  {[...Array(10).keys()].map((i) => {
-                    const valor = i + 1;
-                    const seleccionado = metricasLocales[key] === valor;
-                    return (
-                      <button
-                        key={valor}
-                        className={`px-3 py-1 rounded ${
-                          seleccionado
-                            ? 'bg-green-600 text-white'
-                            : 'bg-gray-200 hover:bg-gray-300'
-                        }`}
-                        onClick={() => manejarValoracion(key, valor)}
-                      >
-                        {valor}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-
+        <div className='flex flex-col just gap-5 justify-between
+        bg-white p-10 rounder-lg shadow-lg'>
+          <PanelMetricas
+            metricas={metricasLocales}
+            setMetricas={setMetricasLocales}
+          />
+          
           {/* Botones */}
           <div className="mt-4 flex justify-end space-x-4">
             <Link to="/login">
@@ -151,7 +99,7 @@ export default function PaginaValoraciones() {
             </button>
           </div>
         </div>
+        </div>
       </div>
-    </div>
   );
 }

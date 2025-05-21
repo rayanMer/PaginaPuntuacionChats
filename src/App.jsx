@@ -3,7 +3,7 @@ import LoginPage from "./components/Login";
 import { Routes, Route } from "react-router";
 import RutasProtegidas from "./services/login/RutasProtegidas";
 import PaginaValoraciones from "./components/PaginaValoraciones";
-import PaginaValoracionesTest from "./components/PaginaValoracionesTest";
+import PaginaValoracionesTest from "./components/PaginaValoraciones/PaginaValoracionesTest";
 import Historial from "./components/Historial";
 import DetalleValoracion from "./components/DetalleValoracion";
 
