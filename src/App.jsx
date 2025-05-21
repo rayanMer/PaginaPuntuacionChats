@@ -7,6 +7,7 @@ import PaginaValoracionesTest from "./components/PaginaValoraciones/PaginaValora
 import Historial from "./components/Historial";
 import DetalleValoracion from "./components/DetalleValoracion";
 import Header from "./components/Header"
+import Pagina404 from "./components/Pagina404";
 
 function App() {
     const location = useLocation();
@@ -51,6 +52,7 @@ function App() {
               </RutasProtegidas>
             }
           />
+          <Route path="*" element={<Pagina404 />} />
         </Routes>
       </div>
     </AuthProvider>

@@ -357,6 +357,192 @@
           "empatía": 8
         }
       }
+    },
+    {
+      "id": "chat4",
+      "doctorEmail": "medico1@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "Tengo un paciente con fiebre alta persistente y erupción cutánea, ¿qué podría ser?"
+        },
+        {
+          "sender": "chatBot",
+          "text": "¿El paciente ha viajado recientemente o ha tenido contacto con alguien enfermo?"
+        },
+        {
+          "sender": "usuario",
+          "text": "Sí, estuvo en Brasil hace dos semanas."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Podría tratarse de dengue o fiebre Zika. Recomendable hacer serología y control de síntomas."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-17T10:20:00Z",
+        "scores": {
+          "precision": 9,
+          "claridad": 8,
+          "utilidad_clínica": 9,
+          "empatía": 7
+        }
+      }
+    },
+    {
+      "id": "chat5",
+      "doctorEmail": "medico1@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "Un niño de 6 años presenta tos seca, dificultad para respirar y fiebre. ¿Qué debería considerar?"
+        },
+        {
+          "sender": "chatBot",
+          "text": "¿El niño ha recibido la vacuna contra la gripe o ha estado en contacto con alguien enfermo?"
+        },
+        {
+          "sender": "usuario",
+          "text": "No está vacunado y su hermana ha tenido síntomas similares."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Podría tratarse de gripe o incluso COVID-19. Recomendado aislamiento, PCR y tratamiento sintomático."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-17T12:05:00Z",
+        "scores": {
+          "precision": 8,
+          "claridad": 8,
+          "utilidad_clínica": 7,
+          "empatía": 9
+        }
+      }
+    },
+    {
+      "id": "chat6",
+      "doctorEmail": "medico1@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "Mi paciente anciano tiene confusión repentina, ¿podría ser una infección urinaria?"
+        },
+        {
+          "sender": "chatBot",
+          "text": "Es posible. ¿Tiene fiebre o historial de ITU anteriores?"
+        },
+        {
+          "sender": "usuario",
+          "text": "Sí, tuvo una infección hace 3 meses."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Recomiendo análisis de orina y cultivo para confirmar diagnóstico. Iniciar hidratación y antibióticos si se confirma."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-18T09:30:00Z",
+        "scores": {
+          "precision": 9,
+          "claridad": 10,
+          "utilidad_clínica": 8,
+          "empatía": 8
+        }
+      }
+    },
+    {
+      "id": "chat7",
+      "doctorEmail": "medico1@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "Una paciente embarazada presenta dolor abdominal leve y sangrado. ¿Qué podría ser?"
+        },
+        {
+          "sender": "chatBot",
+          "text": "¿En qué trimestre del embarazo se encuentra y cuánto tiempo lleva con los síntomas?"
+        },
+        {
+          "sender": "usuario",
+          "text": "Está en el primer trimestre y los síntomas comenzaron esta mañana."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Podría tratarse de una amenaza de aborto. Recomendado ecografía urgente y reposo."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-18T14:10:00Z",
+        "scores": {
+          "precision": 9,
+          "claridad": 9,
+          "utilidad_clínica": 8,
+          "empatía": 10
+        }
+      }
+    },
+    {
+      "id": "chat8",
+      "doctorEmail": "medico1@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "Paciente con antecedentes de hipertensión se queja de visión borrosa y cefalea intensa."
+        },
+        {
+          "sender": "chatBot",
+          "text": "¿Cuál es su presión arterial actual y desde cuándo tiene los síntomas?"
+        },
+        {
+          "sender": "usuario",
+          "text": "170/110 mmHg y comenzó hace dos horas."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Podría tratarse de una crisis hipertensiva. Es recomendable acudir a urgencias para control inmediato de la presión."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-18T16:30:00Z",
+        "scores": {
+          "precision": 10,
+          "claridad": 9,
+          "utilidad_clínica": 9,
+          "empatía": 7
+        }
+      }
+    },
+    {
+      "id": "chat9",
+      "doctorEmail": "medico1@ejemplo.com",
+      "messages": [
+        {
+          "sender": "usuario",
+          "text": "Mi paciente de 35 años tiene dolor lumbar agudo tras cargar peso. ¿Qué recomiendas?"
+        },
+        {
+          "sender": "chatBot",
+          "text": "¿Presenta irradiación del dolor hacia las piernas o pérdida de fuerza?"
+        },
+        {
+          "sender": "usuario",
+          "text": "No, solo dolor localizado en la zona baja de la espalda."
+        },
+        {
+          "sender": "chatBot",
+          "text": "Probable lumbalgia mecánica. Indicar reposo relativo, AINEs y fisioterapia si el dolor persiste."
+        }
+      ],
+      "rating": {
+        "timestamp": "2025-05-18T18:50:00Z",
+        "scores": {
+          "precision": 8,
+          "claridad": 8,
+          "utilidad_clínica": 8,
+          "empatía": 9
+        }
+      }
     }
   ]
 }
