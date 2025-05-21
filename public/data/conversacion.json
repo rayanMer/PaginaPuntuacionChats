@@ -97,10 +97,10 @@
         }
       ],
       "metrics": {
-        "metric_1": 10,
+        "metric_1": 7,
         "metric_2": 10,
         "metric_3": 4,
-        "metric_4": 10
+        "metric_4": 5
       }
     },
     {
