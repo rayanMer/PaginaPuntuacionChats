@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { useAuth } from "../services/login/AuthProvider"
 
 const Header = () => {
-    const {email} = useAuth()
+    const {email, logout} = useAuth()
 
     return (
         <header className="bg-lightest-green sticky top-0 z-69420 pl-5 pr-15 py-5
