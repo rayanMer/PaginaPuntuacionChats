@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion';
 import { Link } from 'react-router-dom';
 import PanelConversacion from './PanelConversacion';
+import Header from "./Header";
 
 export default function PaginaValoraciones() {
   const [conversaciones, setConversaciones] = useState([]);
@@ -63,7 +64,7 @@ export default function PaginaValoraciones() {
   };
 
   return (
-    <div className="min-h-screen bg-green-100 p-6">
+    <div className="min-h-screen bg-lightest-green">
       {/* Header */}
       <Header/>
       {/* 
@@ -94,7 +95,7 @@ export default function PaginaValoraciones() {
       */}
 
       {/* Main content */}
-      <div className="flex space-x-6">
+      <div className="flex py-5 gap-15 justify-center">
         {/* Chat pane */}
         <PanelConversacion mensajes = {mensajes} />
 
