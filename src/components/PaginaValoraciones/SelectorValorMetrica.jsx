@@ -1,4 +1,3 @@
-// src/components/SelectorValorMetrica.jsx
 const valorSeleccionado = "bg-dark-green text-white hover:border-lightest-green"
 const valorDeseccionado = "bg-off-white text-black hover:border-dark-green"
 
