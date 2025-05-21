@@ -5,6 +5,7 @@ import RutasProtegidas from "./services/login/RutasProtegidas";
 import PaginaValoraciones from "./components/PaginaValoraciones";
 import Historial from "./components/Historial";
 import DetalleValoracion from "./components/DetalleValoracion";
+import Pagina404 from "./components/Pagina404";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               </RutasProtegidas>
             }
           />
+          <Route path="*" element={<Pagina404 />} />
         </Routes>
       </div>
     </AuthProvider>
