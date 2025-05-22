@@ -4,8 +4,6 @@ import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion
 import PanelConversacion from './PaginaValoraciones/PanelConversacion';
 import PanelMetricas from './PaginaValoraciones/PanelMetricas';
 import { useAuth } from '../services/login/AuthProvider';
-import Swal from 'sweetalert2';
-
 export default function PaginaValoraciones() {
   const [conversaciones, setConversaciones] = useState([]);
   const [conversacionesNoValoradas, setConversacionesNoValoradas] = useState([]);
@@ -55,11 +53,7 @@ export default function PaginaValoraciones() {
 
   const manejarSiguiente = async () => {
     if (!estaValoradaCompletamente()) {
-Swal.fire({
-  icon: 'warning',
-  title: 'Faltan métricas',
-  text: 'Debes completar todas las métricas antes de continuar.',
-});
+      alert('Debes completar todas las métricas antes de continuar.');
       return;
     }
 
@@ -79,11 +73,7 @@ Swal.fire({
       setConversacionesNoValoradas(nuevasNoValoradas);
 
       if (nuevasNoValoradas.length === 0) {
-Swal.fire({
-  icon: 'success',
-  title: '¡Buen trabajo!',
-  text: 'Has valorado todas las conversaciones.',
-});
+        alert('¡Has valorado todas las conversaciones!');
         setConversacionActual(null);
         setMensajes([]);
         setMetricasLocales({});
@@ -100,8 +90,8 @@ Swal.fire({
   };
 
   return (
-    <div className="min-h-screen bg-lightest-green">
-      <div className="flex py-5 gap-15 justify-center">
+    <div className="h-screen bg-lightest-green">
+      <div className="flex flex-col lg:flex-row py-5 px-10 gap-15 justify-center h-180">
         {/* Panel de conversación */}
         <PanelConversacion mensajes={mensajes} />
 
