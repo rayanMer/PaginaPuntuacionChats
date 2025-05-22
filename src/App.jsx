@@ -8,6 +8,7 @@ import Historial from "./components/Historial";
 import DetalleValoracion from "./components/DetalleValoracion";
 import Header from "./components/Header"
 import Pagina404 from "./components/Pagina404";
+import HistorialTest from "./components/PaginaValoraciones/HistorialTest";
 
 function App() {
     const location = useLocation();
@@ -50,6 +51,14 @@ function App() {
               <RutasProtegidas>
                 <DetalleValoracion />
               </RutasProtegidas>
+            }
+          />
+          <Route
+            path="/historialtest"
+            element={
+              <RutasProtegidas>
+                <HistorialTest />
+              </RutasProtegidas> 
             }
           />
           <Route path="*" element={<Pagina404 />} />

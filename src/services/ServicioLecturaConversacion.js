@@ -48,6 +48,14 @@ const ServicioLecturaConversacion = {
 
   obtenerValoracionesPorId(id) {
     return http.get(`/valoraciones/${id}`)
+  },
+
+  getAllCoversaciones() {
+    return http.get("/conversations")
+  },
+  
+  getConversacionPorId(id) {
+    return http.get(`/conversations?id=${id}`)
   }
 };
 
