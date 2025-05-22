@@ -22,25 +22,8 @@ const ServicioLecturaConversacion = {
       console.error('Error al buscar la conversación por ID:', error);
       return null;
     }
-  },
-
-  async guardarMetricas(id, nuevasMetricas) {
-    try {
-      // Primero obtener la conversación completa
-      const conversacion = await this.getPorId(id);
-      if (!conversacion) throw new Error('Conversación no encontrada');
-
-      // Actualizar solo el campo metrics
-      const conversacionActualizada = { ...conversacion, metrics: nuevasMetricas };
-
-      // Guardar con PUT (reemplaza el objeto completo en json-server)
-      const response = await axios.put(`http://localhost:3000/conversations/${id}`, conversacionActualizada);
-      return response.data;
-    } catch (error) {
-      console.error('Error al guardar métricas:', error);
-      throw error;
-    }
-  },
+  }
+,
 
   obtenerValoracionesPorUsuario(user) {
     return http.get(`/valoraciones?doctorEmail=${user}`)
@@ -48,7 +31,13 @@ const ServicioLecturaConversacion = {
 
   obtenerValoracionesPorId(id) {
     return http.get(`/valoraciones/${id}`)
-  }
+  },
+  obtenerConversacionesTest() {
+    return http.get('/conversations')
+  },
+    guardarValoracion(id,nuevasMetricas,email) {
+        return http.patch(`/conversations/${id}`, { metrics: nuevasMetricas,doctorEmail:email })
+    },
 };
 
 export default ServicioLecturaConversacion;
