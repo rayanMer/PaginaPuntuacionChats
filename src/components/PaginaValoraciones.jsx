@@ -4,6 +4,8 @@ import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion
 import PanelConversacion from './PaginaValoraciones/PanelConversacion';
 import PanelMetricas from './PaginaValoraciones/PanelMetricas';
 import { useAuth } from '../services/login/AuthProvider';
+import Swal from 'sweetalert2';
+
 export default function PaginaValoraciones() {
   const [conversaciones, setConversaciones] = useState([]);
   const [conversacionesNoValoradas, setConversacionesNoValoradas] = useState([]);
@@ -53,7 +55,11 @@ export default function PaginaValoraciones() {
 
   const manejarSiguiente = async () => {
     if (!estaValoradaCompletamente()) {
-      alert('Debes completar todas las métricas antes de continuar.');
+Swal.fire({
+  icon: 'warning',
+  title: 'Faltan métricas',
+  text: 'Debes completar todas las métricas antes de continuar.',
+});
       return;
     }
 
@@ -73,7 +79,11 @@ export default function PaginaValoraciones() {
       setConversacionesNoValoradas(nuevasNoValoradas);
 
       if (nuevasNoValoradas.length === 0) {
-        alert('¡Has valorado todas las conversaciones!');
+Swal.fire({
+  icon: 'success',
+  title: '¡Buen trabajo!',
+  text: 'Has valorado todas las conversaciones.',
+});
         setConversacionActual(null);
         setMensajes([]);
         setMetricasLocales({});

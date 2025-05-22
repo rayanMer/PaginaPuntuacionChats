@@ -3,7 +3,6 @@ import LoginPage from "./components/Login";
 import { Routes, Route, useLocation } from "react-router";
 import RutasProtegidas from "./services/login/RutasProtegidas";
 import PaginaValoraciones from "./components/PaginaValoraciones";
-import PaginaValoracionesTest from "./components/PaginaValoraciones/PaginaValoracionesTest";
 import Historial from "./components/Historial";
 import DetalleValoracion from "./components/DetalleValoracion";
 import Header from "./components/Header"
@@ -26,15 +25,6 @@ function App() {
                 <PaginaValoraciones />
               </RutasProtegidas> 
             }
-          />
-          {/* Borrar una vez terminado PaginaValoraciones*/}
-          <Route
-            path="/test"
-            element={
-              <RutasProtegidas>
-                <PaginaValoracionesTest />
-              </RutasProtegidas> 
-          }
           />
           <Route
             path="/historial"
