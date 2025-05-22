@@ -28,7 +28,8 @@ export const mostrarAlerta = (
         text: mensaje,
         icon: tipo,
         customClass: {
-            popup: 'sweet-alert'
+            popup: 'sweet-alert',
+            confirmButton: "btn-ok"
         }
     })
 }
