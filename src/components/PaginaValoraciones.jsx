@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion';
 import { Link } from 'react-router-dom';
 
@@ -11,13 +11,13 @@ export default function PaginaValoraciones() {
     metric_3: 5,
     metric_4: 5,
   });
-  const [cargando, setCargando] = useState(true);
 
-  // Memoizar la conversación actual
-  const conversacion = conversaciones[indiceActual] || null;
+  // Conversación y métricas actuales
+  const conversacion = conversaciones[indiceActual];
   const mensajes = conversacion?.messages || [];
   const metricas = conversacion?.metrics;
 
+  // Todas las métricas con labels y keys
   const todasMetricas = [
     { label: 'Precisión diagnóstica', key: 'metric_1' },
     { label: 'Claridad textual', key: 'metric_2' },
@@ -25,96 +25,76 @@ export default function PaginaValoraciones() {
     { label: 'Utilidad de las recomendaciones', key: 'metric_4' },
   ];
 
-  // Cargar conversaciones (solo al montar)
+  // Dividir métricas en altas y bajas según valor en metricasLocales
+  const metricasAltas = todasMetricas.filter(({ key }) => metricasLocales[key] >= 5);
+  const metricasBajas = todasMetricas.filter(({ key }) => metricasLocales[key] < 5);
+
+  // Cargar conversaciones al montar
   useEffect(() => {
-    const cargarConversaciones = async () => {
+    const cargarDatos = async () => {
       try {
         const datos = await ServicioLecturaConversacion.obtenerConversaciones();
         setConversaciones(datos || []);
+        setIndiceActual(0);
       } catch (error) {
-        console.error('Error al cargar conversaciones:', error);
-        setConversaciones([]);
-      } finally {
-        setCargando(false);
+        console.error('Error cargando conversaciones:', error);
       }
     };
-    cargarConversaciones();
+    cargarDatos();
   }, []);
 
-  // Sincronizar métricas locales cuando cambia la conversación
+  // Actualizar metricasLocales cuando cambia la conversación actual
   useEffect(() => {
-    if (conversacion) {
-      setMetricasLocales(prev => ({
-        ...prev,
-        ...(conversacion.metrics || {
-          metric_1: 5,
-          metric_2: 5,
-          metric_3: 5,
-          metric_4: 5,
-        })
-      }));
-    }
-  }, [conversacion?.id]); // Solo cuando cambia el ID
-
-  // Manejar siguiente conversación (memoizado)
-  const manejarSiguiente = useCallback(async () => {
-    if (!conversacion || cargando) return;
-
-    try {
-      // Guardar métricas actuales
-      await ServicioLecturaConversacion.guardarMetricas(
-        conversacion.id, 
-        metricasLocales
-      );
-
-      // Actualizar estado local sin recrear el array
-      setConversaciones(prev => prev.map(c => 
-        c.id === conversacion.id 
-          ? { ...c, metrics: { ...metricasLocales } } 
-          : c
-      ));
-
-      // Avanzar al siguiente índice de manera segura
-      setIndiceActual(prev => {
-        const nuevoIndice = prev + 1;
-        return nuevoIndice < conversaciones.length ? nuevoIndice : prev;
+    if (metricas && Object.keys(metricas).length > 0) {
+      setMetricasLocales(metricas);
+    } else {
+      setMetricasLocales({
+        metric_1: 5,
+        metric_2: 5,
+        metric_3: 5,
+        metric_4: 5,
       });
-    } catch (error) {
-      console.error('Error al guardar métricas:', error);
     }
-  }, [conversacion, metricasLocales, conversaciones.length, cargando]);
+  }, [conversacion]);
 
-  // Dividir métricas (optimizado)
-  const [metricasAltas, metricasBajas] = todasMetricas.reduce(
-    ([altas, bajas], metrica) => {
-      const valor = metricasLocales[metrica.key];
-      return valor >= 5 
-        ? [[...altas, metrica], bajas] 
-        : [altas, [...bajas, metrica]];
-    },
-    [[], []]
-  );
+  // Ajustar índice si conversaciones cambia (por ejemplo tras borrar o actualizar)
+  useEffect(() => {
+    if (indiceActual >= conversaciones.length) {
+      setIndiceActual(conversaciones.length > 0 ? conversaciones.length - 1 : 0);
+    }
+  }, [conversaciones, indiceActual]);
 
-  // Manejar cambio de valoración
+  // Cambiar la valoración localmente
   const manejarValoracion = (key, valor) => {
-    setMetricasLocales(prev => ({ ...prev, [key]: valor }));
+    setMetricasLocales((prev) => ({
+      ...prev,
+      [key]: valor,
+    }));
   };
 
-  if (cargando) {
-    return <div className="min-h-screen bg-green-100 p-6">Cargando...</div>;
-  }
+  // Guardar las métricas y pasar a la siguiente conversación
+  const manejarSiguiente = async () => {
+    if (!conversacion) return;
 
-  if (conversaciones.length === 0) {
-    return (
-      <div className="min-h-screen bg-green-100 p-6">
-        No hay conversaciones para valorar
-      </div>
+    try {
+      await ServicioLecturaConversacion.guardarMetricas(conversacion.id, metricasLocales);
+      // Actualiza la conversación localmente con las nuevas métricas
+      setConversaciones((prev) =>
+        prev.map((c) =>
+          c.id === conversacion.id ? { ...c, metrics: metricasLocales } : c
+        )
+      );
+    } catch (error) {
+      console.error('Error guardando métricas:', error);
+      return; // Si falla, no cambiar índice
+    }
+
+    // Avanza si no está en la última conversación
+    setIndiceActual((prev) =>
+      prev < conversaciones.length - 1 ? prev + 1 : prev
     );
-  }
+  };
 
-
-
-  // El resto de tu componente permanece igual...
   return (
     <div className="min-h-screen bg-green-100 p-6">
       <div className="flex justify-between items-center mb-6">
@@ -253,6 +233,3 @@ export default function PaginaValoraciones() {
     </div>
   );
 }
-
-  
-

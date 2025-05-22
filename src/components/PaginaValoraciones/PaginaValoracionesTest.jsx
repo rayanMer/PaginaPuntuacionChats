@@ -22,6 +22,7 @@ export default function PaginaValoraciones() {
       try {
         const datos = await ServicioLecturaConversacion.obtenerConversaciones();
         setConversaciones(datos);
+        console.log(datos);
       } catch (error) {
         console.error('Error cargando conversaciones:', error);
       }
@@ -40,37 +41,15 @@ export default function PaginaValoraciones() {
   }, [conversacion]);
 
   const manejarValoracion = (key, valor) => {
-    setMetricasLocales((prev) => ({
-      ...prev,
-      [key]: valor,
-    }));
+   
   };
 
   const manejarSiguiente = async () => {
-    if (conversacion && Object.keys(metricasLocales).length > 0) {
-      try {
-        // Guardamos las métricas modificadas en el json-server
-        await ServicioLecturaConversacion.guardarMetricas(conversacion.id, metricasLocales);
-        // Actualizamos el estado local para reflejar guardado
-        setConversaciones((prev) =>
-          prev.map((c) =>
-            c.id === conversacion.id ? { ...c, metrics: metricasLocales } : c
-          )
-        );
-      } catch (error) {
-        console.error('Error guardando métricas:', error);
-      }
-    }
-    if (indiceActual < conversaciones.length - 1) {
-      setIndiceActual((prev) => prev + 1);
-    }
+   
   };
 
   return (
     <div className="min-h-screen bg-lightest-green">
-      {/* Header */}
-      <Header/>
-
       {/* Main content */}
       <div className="flex py-5 gap-15 justify-center">
         {/* Chat pane */}
@@ -83,21 +62,12 @@ export default function PaginaValoraciones() {
             metricas={metricasLocales}
             setMetricas={setMetricasLocales}
           />
-          
-          {/* Botones */}
-          <div className="mt-4 flex justify-end space-x-4">
-            <Link to="/login">
-              <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-                Terminar Valoraciones
-              </button>
-            </Link>
             <button
               onClick={manejarSiguiente}
               className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
             >
               Siguiente
             </button>
-          </div>
         </div>
         </div>
       </div>

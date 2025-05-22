@@ -97,10 +97,10 @@
         }
       ],
       "metrics": {
-        "metric_1": 3,
-        "metric_2": 3,
-        "metric_3": 3,
-        "metric_4": 3
+        "metric_1": 6,
+        "metric_2": 8,
+        "metric_3": 7,
+        "metric_4": 8
       }
     },
     {

@@ -1,16 +1,21 @@
 import { AuthProvider } from "./services/login/AuthProvider";
 import LoginPage from "./components/Login";
-import { Routes, Route } from "react-router";
+import { Routes, Route, useLocation } from "react-router";
 import RutasProtegidas from "./services/login/RutasProtegidas";
 import PaginaValoraciones from "./components/PaginaValoraciones";
 import PaginaValoracionesTest from "./components/PaginaValoraciones/PaginaValoracionesTest";
 import Historial from "./components/Historial";
 import DetalleValoracion from "./components/DetalleValoracion";
+import Header from "./components/Header"
 import Pagina404 from "./components/Pagina404";
 
 function App() {
+    const location = useLocation();
+    const mostrarHeader = location.pathname !== "/login"
+
   return (
     <AuthProvider>
+      {mostrarHeader && <Header/>}
       <div>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
