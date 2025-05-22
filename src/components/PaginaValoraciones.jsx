@@ -4,6 +4,7 @@ import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion
 import PanelConversacion from './PaginaValoraciones/PanelConversacion';
 import PanelMetricas from './PaginaValoraciones/PanelMetricas';
 import { useAuth } from '../services/login/AuthProvider';
+import { mostrarAlerta } from "../utils/sweetAlerts"
 
 export default function PaginaValoraciones() {
   const [conversaciones, setConversaciones] = useState([]);
@@ -56,7 +57,7 @@ export default function PaginaValoraciones() {
 
   const manejarSiguiente = async () => {
     if (!estaValoradaCompletamente()) {
-      alert('Debes completar todas las métricas antes de continuar.');
+      mostrarAlerta("", "Por favor, rellene todas las métricas antes de continuar", "warning")
       return;
     }
 
@@ -76,7 +77,7 @@ export default function PaginaValoraciones() {
       setConversacionesNoValoradas(nuevasNoValoradas);
 
       if (nuevasNoValoradas.length === 0) {
-        alert('¡Has valorado todas las conversaciones!');
+        mostrarAlerta("", "¡Has valorado todas las conversaciones!", "success")
         setConversacionActual(null);
         setMensajes([]);
         setMetricasLocales({});
