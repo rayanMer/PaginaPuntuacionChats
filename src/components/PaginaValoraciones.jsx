@@ -1,233 +1,113 @@
-import React, { useEffect, useState } from 'react';
+// src/components/PaginaValoraciones.jsx
+import { useEffect, useState } from 'react';
 import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion';
-import { Link } from 'react-router-dom';
+import PanelConversacion from './PaginaValoraciones/PanelConversacion';
+import PanelMetricas from './PaginaValoraciones/PanelMetricas';
 
 export default function PaginaValoraciones() {
   const [conversaciones, setConversaciones] = useState([]);
-  const [indiceActual, setIndiceActual] = useState(0);
-  const [metricasLocales, setMetricasLocales] = useState({
-    metric_1: 5,
-    metric_2: 5,
-    metric_3: 5,
-    metric_4: 5,
-  });
+  const [conversacionesNoValoradas, setConversacionesNoValoradas] = useState([]);
+  const [conversacionActual, setConversacionActual] = useState(null);
+  const [mensajes, setMensajes] = useState([]);
+  const [metricasLocales, setMetricasLocales] = useState({});
 
-  // Conversación y métricas actuales
-  const conversacion = conversaciones[indiceActual];
-  const mensajes = conversacion?.messages || [];
-  const metricas = conversacion?.metrics;
-
-  // Todas las métricas con labels y keys
-  const todasMetricas = [
-    { label: 'Precisión diagnóstica', key: 'metric_1' },
-    { label: 'Claridad textual', key: 'metric_2' },
-    { label: 'Fluidez conversacional', key: 'metric_3' },
-    { label: 'Utilidad de las recomendaciones', key: 'metric_4' },
-  ];
-
-  // Dividir métricas en altas y bajas según valor en metricasLocales
-  const metricasAltas = todasMetricas.filter(({ key }) => metricasLocales[key] >= 5);
-  const metricasBajas = todasMetricas.filter(({ key }) => metricasLocales[key] < 5);
-
-  // Cargar conversaciones al montar
+  // Cargar datos al montar el componente
   useEffect(() => {
     const cargarDatos = async () => {
       try {
-        const datos = await ServicioLecturaConversacion.obtenerConversaciones();
-        setConversaciones(datos || []);
-        setIndiceActual(0);
+        const datos = await ServicioLecturaConversacion.obtenerConversacionesTest();
+        const todasConversaciones = datos.data;
+        setConversaciones(todasConversaciones);
+
+        const noValoradas = todasConversaciones.filter(conv => conv.metrics === null);
+        setConversacionesNoValoradas(noValoradas);
+
+        if (noValoradas.length > 0) {
+          const aleatoria = seleccionarConversacionAleatoria(noValoradas);
+          setConversacionActual(aleatoria);
+          setMensajes(aleatoria.messages);
+          setMetricasLocales({});
+        }
       } catch (error) {
         console.error('Error cargando conversaciones:', error);
       }
     };
+
     cargarDatos();
   }, []);
 
-  // Actualizar metricasLocales cuando cambia la conversación actual
-  useEffect(() => {
-    if (metricas && Object.keys(metricas).length > 0) {
-      setMetricasLocales(metricas);
-    } else {
-      setMetricasLocales({
-        metric_1: 5,
-        metric_2: 5,
-        metric_3: 5,
-        metric_4: 5,
-      });
-    }
-  }, [conversacion]);
-
-  // Ajustar índice si conversaciones cambia (por ejemplo tras borrar o actualizar)
-  useEffect(() => {
-    if (indiceActual >= conversaciones.length) {
-      setIndiceActual(conversaciones.length > 0 ? conversaciones.length - 1 : 0);
-    }
-  }, [conversaciones, indiceActual]);
-
-  // Cambiar la valoración localmente
-  const manejarValoracion = (key, valor) => {
-    setMetricasLocales((prev) => ({
-      ...prev,
-      [key]: valor,
-    }));
+  // Función para seleccionar una conversación no valorada aleatoriamente
+  const seleccionarConversacionAleatoria = (lista) => {
+    const indice = Math.floor(Math.random() * lista.length);
+    return lista[indice];
   };
 
-  // Guardar las métricas y pasar a la siguiente conversación
-  const manejarSiguiente = async () => {
-    if (!conversacion) return;
-
-    try {
-      await ServicioLecturaConversacion.guardarMetricas(conversacion.id, metricasLocales);
-      // Actualiza la conversación localmente con las nuevas métricas
-      setConversaciones((prev) =>
-        prev.map((c) =>
-          c.id === conversacion.id ? { ...c, metrics: metricasLocales } : c
-        )
-      );
-    } catch (error) {
-      console.error('Error guardando métricas:', error);
-      return; // Si falla, no cambiar índice
-    }
-
-    // Avanza si no está en la última conversación
-    setIndiceActual((prev) =>
-      prev < conversaciones.length - 1 ? prev + 1 : prev
+  // Validación: ¿todas las métricas están completas?
+  const estaValoradaCompletamente = () => {
+    return (
+      metricasLocales.metric_1 != null &&
+      metricasLocales.metric_2 != null &&
+      metricasLocales.metric_3 != null &&
+      metricasLocales.metric_4 != null
     );
   };
 
+  const manejarSiguiente = async () => {
+    if (!estaValoradaCompletamente()) {
+      alert('Debes completar todas las métricas antes de continuar.');
+      return;
+    }
+
+    try {
+      const nuevasMetricas = {
+        metric_1: metricasLocales.metric_1,
+        metric_2: metricasLocales.metric_2,
+        metric_3: metricasLocales.metric_3,
+        metric_4: metricasLocales.metric_4
+      };
+      console.log(conversacionActual.id)
+      await ServicioLecturaConversacion.guardarValoracion(conversacionActual.id, nuevasMetricas);
+
+      const nuevasNoValoradas = conversacionesNoValoradas.filter(
+        conv => conv.id !== conversacionActual.id
+      );
+      setConversacionesNoValoradas(nuevasNoValoradas);
+
+      if (nuevasNoValoradas.length === 0) {
+        alert('¡Has valorado todas las conversaciones!');
+        setConversacionActual(null);
+        setMensajes([]);
+        setMetricasLocales({});
+        return;
+      }
+
+      const nueva = seleccionarConversacionAleatoria(nuevasNoValoradas);
+      setConversacionActual(nueva);
+      setMensajes(nueva.messages);
+      setMetricasLocales({});
+    } catch (error) {
+      console.error('Error guardando valoración:', error);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-green-100 p-6">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">
-          Valoración de los chats por: medico1@gmail.com
-        </h1>
-        <Link to="/historial">
-          <button className="flex items-center gap-1 text-blue-600 hover:underline">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 4a1 1 0 011-1h3m10 0h3a1 1 0 011 1v3m0 10v3a1 1 0 01-1 1h-3m-10 0H4a1 1 0 01-1-1v-3"
-              />
-            </svg>
-            Historial
+    <div className="min-h-screen bg-lightest-green">
+      <div className="flex py-5 gap-15 justify-center">
+        {/* Panel de conversación */}
+        <PanelConversacion mensajes={mensajes} />
+
+        {/* Panel de métricas */}
+        <div className="flex flex-col gap-5 justify-between bg-white p-10 rounded-lg shadow-lg">
+          <PanelMetricas
+            metricas={metricasLocales}
+            setMetricas={setMetricasLocales}
+          />
+          <button
+            onClick={manejarSiguiente}
+            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+          >
+            Siguiente
           </button>
-        </Link>
-      </div>
-
-      <div className="flex space-x-6">
-        <div className="flex-1 bg-white rounded-lg shadow h-[70vh] overflow-y-auto p-4 flex flex-col">
-          <div className="space-y-4 flex-grow overflow-auto">
-            {mensajes.length === 0 && (
-              <p className="text-center text-gray-500 italic">No hay mensajes para mostrar</p>
-            )}
-            {mensajes.map((msg, idx) => (
-              <div
-                key={idx}
-                className={`p-3 rounded-lg max-w-xs ${
-                  msg.role === 'assistant'
-                    ? 'self-start bg-green-200'
-                    : msg.role === 'user'
-                    ? 'self-end bg-gray-200'
-                    : 'text-sm text-gray-500 italic'
-                }`}
-              >
-                {msg.content}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="w-1/3 bg-white rounded-lg shadow p-6 flex flex-col justify-between h-[70vh]">
-          <div className="space-y-6">
-            <h2 className="font-semibold text-lg">Métricas con valor ≥ 5</h2>
-            {metricasAltas.length === 0 && (
-              <p className="text-gray-500 italic">No hay métricas con valor mayor o igual a 5.</p>
-            )}
-            {metricasAltas.map(({ label, key }) => (
-              <div key={key}>
-                <label className="block font-medium mb-1">
-                  {label}:{' '}
-                  <span className="text-sm text-gray-500">Selecciona un valor 1–10</span>
-                </label>
-                <div className="flex space-x-2 flex-wrap">
-                  {[...Array(10)].map((_, i) => {
-                    const valor = i + 1;
-                    const seleccionado = metricasLocales[key] === valor;
-                    return (
-                      <button
-                        key={valor}
-                        className={`px-3 py-1 rounded ${
-                          seleccionado ? 'bg-green-600 text-white' : 'bg-gray-200 hover:bg-gray-300'
-                        }`}
-                        onClick={() => manejarValoracion(key, valor)}
-                      >
-                        {valor}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-
-            <h2 className="font-semibold text-lg mt-6">Métricas con valor &lt; 5</h2>
-            {metricasBajas.length > 0 ? (
-              metricasBajas.map(({ label, key }) => (
-                <div key={key}>
-                  <label className="block font-medium mb-1">
-                    {label}:{' '}
-                    <span className="text-sm text-gray-500">Selecciona un valor 1–10</span>
-                  </label>
-                  <div className="flex space-x-2 flex-wrap">
-                    {[...Array(10)].map((_, i) => {
-                      const valor = i + 1;
-                      const seleccionado = metricasLocales[key] === valor;
-                      return (
-                        <button
-                          key={valor}
-                          className={`px-3 py-1 rounded ${
-                            seleccionado ? 'bg-red-600 text-white' : 'bg-gray-200 hover:bg-gray-300'
-                          }`}
-                          onClick={() => manejarValoracion(key, valor)}
-                        >
-                          {valor}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p className="text-gray-500 italic">No hay métricas con valor menor a 5.</p>
-            )}
-          </div>
-
-          <div className="mt-4 flex justify-end space-x-4">
-            <Link to="/login">
-              <button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-                Terminar Valoraciones
-              </button>
-            </Link>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                manejarSiguiente();
-              }}
-              className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-              disabled={conversaciones.length === 0}
-              title={conversaciones.length === 0 ? 'No hay conversaciones para valorar' : ''}
-            >
-              Siguiente
-            </button>
-          </div>
         </div>
       </div>
     </div>

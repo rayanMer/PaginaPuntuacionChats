@@ -1,7 +1,7 @@
 {
-    "conversations": [
+  "conversations": [
     {
-      "id": 1,
+      "id": "1",
       "messages": [
         {
           "role": "system",
@@ -105,7 +105,7 @@
       "doctorEmail": "soyunemail@gmail.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "messages": [
         {
           "role": "system",
@@ -184,134 +184,144 @@
       },
       "doctorEmail": "medicaclínica@gmail.com"
     },
-     {
-  "id": 3,
-  "messages": [
     {
-      "role": "system",
-      "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
-    },
-    {
-      "role": "user",
-      "content": "Paciente masculino de 28 años con fiebre, mialgias intensas, cefalea retroocular y erupción maculopapular desde hace 3 días. Viene de zona endémica de dengue."
-    },
-    {
-      "role": "assistant",
-      "content": "¿Ha presentado sangrado, dolor abdominal, vómitos persistentes o signos de fuga capilar? ¿Cuál es el estado de hidratación y presión arterial?"
-    },
-    {
-      "role": "user",
-      "content": "No hay sangrados ni dolor abdominal. Presión normal, bien hidratado, pero refiere cansancio extremo."
-    },
-    {
-      "role": "assistant",
-      "content": "Puede tratarse de dengue sin signos de alarma. ¿Se han solicitado hemograma y pruebas de función hepática? ¿Plaquetas y hematocrito?"
-    },
-    {
-      "role": "user",
-      "content": "Sí. Plaquetas en 120,000, hematocrito 44% (sin comparativo previo), GOT y GPT elevadas x2. Leucopenia leve."
-    },
-    {
-      "role": "assistant",
-      "content": "Compatible con dengue. Observar evolución de plaquetas y hematocrito cada 24h. Aumentar vigilancia si hay signos de alarma. ¿Está hidratándose por vía oral?"
-    },
-    {
-      "role": "user",
-      "content": "Sí, buena tolerancia oral. Se le indicó paracetamol y reposo domiciliario."
-    },
-    {
-      "role": "assistant",
-      "content": "Correcto. Evitar AINES. Reforzar signos de alarma: sangrado, vómitos, dolor abdominal, letargo, hepatomegalia, dificultad respiratoria. Si aparecen, hospitalizar."
-    },
-    {
-      "role": "user",
-      "content": "¿Recomiendas control diario o puede ser cada 48h si permanece estable?"
-    },
-    {
-      "role": "assistant",
-      "content": "Idealmente control clínico y de laboratorio diario en fase crítica (días 3-7). Si permanece estable tras día 7, puede espaciarse."
-    },
-    {
-      "role": "user",
-      "content": "¿Es necesario confirmar con prueba NS1 o IgM/IgG?"
-    },
-    {
-      "role": "assistant",
-      "content": "NS1 útil en primeros 5 días. Si está disponible, puede confirmar. IgM aparece tras día 5. El diagnóstico es clínico si hay brote local y hallazgos típicos, pero la confirmación serológica es ideal para vigilancia epidemiológica."
-    },
-    {
-      "role": "user",
-      "content": "¿Debo considerar hospitalización si las plaquetas bajan a menos de 100,000?"
-    },
-    {
-      "role": "assistant",
-      "content": "Solo si se acompañan de signos de alarma o hematocrito elevado. Plaquetas <100,000 sin clínica de alarma puede manejarse ambulatoriamente con vigilancia estrecha."
-    }
-  ],
-  "metrics": {
-    "metric_1": 6,
-    "metric_2": 9,
-    "metric_3": 4,
-    "metric_4": 7
-  },
-  "doctorEmail": "dr.jorge.infectologia@gmail.com"
-    },
-    {
-    "id": 4,
-    "messages": [
-      {
-        "role": "system",
-        "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+      "id": "3",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente masculino de 28 años con fiebre, mialgias intensas, cefalea retroocular y erupción maculopapular desde hace 3 días. Viene de zona endémica de dengue."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Ha presentado sangrado, dolor abdominal, vómitos persistentes o signos de fuga capilar? ¿Cuál es el estado de hidratación y presión arterial?"
+        },
+        {
+          "role": "user",
+          "content": "No hay sangrados ni dolor abdominal. Presión normal, bien hidratado, pero refiere cansancio extremo."
+        },
+        {
+          "role": "assistant",
+          "content": "Puede tratarse de dengue sin signos de alarma. ¿Se han solicitado hemograma y pruebas de función hepática? ¿Plaquetas y hematocrito?"
+        },
+        {
+          "role": "user",
+          "content": "Sí. Plaquetas en 120,000, hematocrito 44% (sin comparativo previo), GOT y GPT elevadas x2. Leucopenia leve."
+        },
+        {
+          "role": "assistant",
+          "content": "Compatible con dengue. Observar evolución de plaquetas y hematocrito cada 24h. Aumentar vigilancia si hay signos de alarma. ¿Está hidratándose por vía oral?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, buena tolerancia oral. Se le indicó paracetamol y reposo domiciliario."
+        },
+        {
+          "role": "assistant",
+          "content": "Correcto. Evitar AINES. Reforzar signos de alarma: sangrado, vómitos, dolor abdominal, letargo, hepatomegalia, dificultad respiratoria. Si aparecen, hospitalizar."
+        },
+        {
+          "role": "user",
+          "content": "¿Recomiendas control diario o puede ser cada 48h si permanece estable?"
+        },
+        {
+          "role": "assistant",
+          "content": "Idealmente control clínico y de laboratorio diario en fase crítica (días 3-7). Si permanece estable tras día 7, puede espaciarse."
+        },
+        {
+          "role": "user",
+          "content": "¿Es necesario confirmar con prueba NS1 o IgM/IgG?"
+        },
+        {
+          "role": "assistant",
+          "content": "NS1 útil en primeros 5 días. Si está disponible, puede confirmar. IgM aparece tras día 5. El diagnóstico es clínico si hay brote local y hallazgos típicos, pero la confirmación serológica es ideal para vigilancia epidemiológica."
+        },
+        {
+          "role": "user",
+          "content": "¿Debo considerar hospitalización si las plaquetas bajan a menos de 100,000?"
+        },
+        {
+          "role": "assistant",
+          "content": "Solo si se acompañan de signos de alarma o hematocrito elevado. Plaquetas <100,000 sin clínica de alarma puede manejarse ambulatoriamente con vigilancia estrecha."
+        }
+      ],
+      "metrics": {
+        "metric_1": 6,
+        "metric_2": 9,
+        "metric_3": 4,
+        "metric_4": 7
       },
-      {
-        "role": "user",
-        "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
+      "doctorEmail": "dr.jorge.infectologia@gmail.com"
+    },
+    {
+      "id": "4",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
+        },
+        {
+          "role": "user",
+          "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
+        },
+        {
+          "role": "assistant",
+          "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
+        }
+      ],
+      "metrics": {
+        "metric_1": 5,
+        "metric_2": 5,
+        "metric_3": 5,
+        "metric_4": 5
       },
-      {
-        "role": "assistant",
-        "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
+      "doctorEmail": null
+    },
+    {
+      "id": "5",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente femenina de 36 años con tos crónica, pérdida de peso y sudoración nocturna."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tabaquismo, contacto con TB, imagen pulmonar disponible?"
+        },
+        {
+          "role": "user",
+          "content": "No fuma. Contacto con caso de TB hace 6 meses. RX muestra cavitación en lóbulo superior derecho."
+        },
+        {
+          "role": "assistant",
+          "content": "Altamente sugestivo de TB pulmonar activa. Solicitar baciloscopía y comenzar aislamiento respiratorio."
+        }
+      ],
+      "metrics": {
+        "metric_1": 5,
+        "metric_2": 5,
+        "metric_3": 5,
+        "metric_4": 4
       },
-      {
-        "role": "user",
-        "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
-      },
-      {
-        "role": "assistant",
-        "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
-      }
-    ],
-    "metrics": null,
-    "doctorEmail": null
-  },
-  {
-    "id": 5,
-    "messages": [
-      {
-        "role": "system",
-        "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
-      },
-      {
-        "role": "user",
-        "content": "Paciente femenina de 36 años con tos crónica, pérdida de peso y sudoración nocturna."
-      },
-      {
-        "role": "assistant",
-        "content": "¿Tabaquismo, contacto con TB, imagen pulmonar disponible?"
-      },
-      {
-        "role": "user",
-        "content": "No fuma. Contacto con caso de TB hace 6 meses. RX muestra cavitación en lóbulo superior derecho."
-      },
-      {
-        "role": "assistant",
-        "content": "Altamente sugestivo de TB pulmonar activa. Solicitar baciloscopía y comenzar aislamiento respiratorio."
-      }
-    ],
-    "metrics": null,
-    "doctorEmail": null
-  },
-  {
-      "id": 6,
+      "doctorEmail": null
+    },
+    {
+      "id": "6",
       "messages": [
         {
           "role": "system",
@@ -334,11 +344,16 @@
           "content": "Doxiciclina o una fluoroquinolona respiratoria como levofloxacino podrían ser adecuadas, dependiendo del perfil del paciente."
         }
       ],
-      "metrics": null,
+      "metrics": {
+        "metric_1": 6,
+        "metric_2": 6,
+        "metric_3": 6,
+        "metric_4": 6
+      },
       "doctorEmail": null
     },
     {
-      "id": 7,
+      "id": "7",
       "messages": [
         {
           "role": "system",
@@ -361,11 +376,16 @@
           "content": "Los síntomas son consistentes con enfermedad de Kawasaki. Recomiendo referir al paciente a un centro especializado para evaluación y posible tratamiento con inmunoglobulina intravenosa."
         }
       ],
-      "metrics": null,
+      "metrics": {
+        "metric_1": 3,
+        "metric_2": 3,
+        "metric_3": 3,
+        "metric_4": 3
+      },
       "doctorEmail": null
     },
     {
-      "id": 10,
+      "id": "10",
       "messages": [
         {
           "role": "system",
@@ -460,94 +480,109 @@
           "content": "Sí. TAC contrastado de tórax y abdomen superior puede ayudar a descartar neoplasias. También puede considerar broncoscopia si hay dudas o síntomas adicionales."
         }
       ],
-      "metrics": null,
+      "metrics": {
+        "metric_1": 2,
+        "metric_2": 2,
+        "metric_3": 2,
+        "metric_4": 2
+      },
       "doctorEmail": null
     },
     {
-    "id": 11,
-    "messages": [
-      {
-        "role": "system",
-        "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+      "id": "11",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
+        },
+        {
+          "role": "user",
+          "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
+        },
+        {
+          "role": "assistant",
+          "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
+        }
+      ],
+      "metrics": {
+        "metric_1": 1,
+        "metric_2": 1,
+        "metric_3": 1,
+        "metric_4": 1
       },
-      {
-        "role": "user",
-        "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
-      },
-      {
-        "role": "assistant",
-        "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
-      },
-      {
-        "role": "user",
-        "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
-      },
-      {
-        "role": "assistant",
-        "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
-      }
-    ],
-    "metrics": null,
-    "doctorEmail": null
-  },
-  {
-    "id": 12,
-    "messages": [
-      {
-        "role": "system",
-        "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
-      },
-      {
-        "role": "user",
-        "content": "Paciente femenina de 36 años con tos crónica, pérdida de peso y sudoración nocturna."
-      },
-      {
-        "role": "assistant",
-        "content": "¿Tabaquismo, contacto con TB, imagen pulmonar disponible?"
-      },
-      {
-        "role": "user",
-        "content": "No fuma. Contacto con caso de TB hace 6 meses. RX muestra cavitación en lóbulo superior derecho."
-      },
-      {
-        "role": "assistant",
-        "content": "Altamente sugestivo de TB pulmonar activa. Solicitar baciloscopía y comenzar aislamiento respiratorio."
-      }
-    ],
-    "metrics": {
-      "metric_1": 8,
-      "metric_2": 10,
-      "metric_3": 6,
-      "metric_4": 5
+      "doctorEmail": null
     },
-    "doctorEmail": "doctor963@clinica.com"
-  },
-  {
-    "id": 13,
-    "messages": [
-      {
-        "role": "system",
-        "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+    {
+      "id": "12",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente femenina de 36 años con tos crónica, pérdida de peso y sudoración nocturna."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tabaquismo, contacto con TB, imagen pulmonar disponible?"
+        },
+        {
+          "role": "user",
+          "content": "No fuma. Contacto con caso de TB hace 6 meses. RX muestra cavitación en lóbulo superior derecho."
+        },
+        {
+          "role": "assistant",
+          "content": "Altamente sugestivo de TB pulmonar activa. Solicitar baciloscopía y comenzar aislamiento respiratorio."
+        }
+      ],
+      "metrics": {
+        "metric_1": 3,
+        "metric_2": 3,
+        "metric_3": 2,
+        "metric_4": 1
       },
-      {
-        "role": "user",
-        "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
+      "doctorEmail": "doctor963@clinica.com"
+    },
+    {
+      "id": "13",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
+        },
+        {
+          "role": "user",
+          "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
+        },
+        {
+          "role": "assistant",
+          "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
+        }
+      ],
+      "metrics": {
+        "metric_1": 3,
+        "metric_2": 6,
+        "metric_3": 7,
+        "metric_4": 3
       },
-      {
-        "role": "assistant",
-        "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
-      },
-      {
-        "role": "user",
-        "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
-      },
-      {
-        "role": "assistant",
-        "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
-      }
-    ],
-    "metrics": null,
-    "doctorEmail": null
-  }
+      "doctorEmail": null
+    }
   ]
 }

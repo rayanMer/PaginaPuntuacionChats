@@ -12,40 +12,46 @@ export default function PaginaValoraciones() {
   const [metricasLocales, setMetricasLocales] = useState({});
 
   const conversacion = conversaciones[indiceActual];
-  const mensajes = conversacion?.messages || [];
+  const [mensajes, setMensajes] = useState([]);
   const metricas = conversacion?.metrics || {};
-
+  const [conversacionesNoValoradas, setConversacionesNoValoradas] = useState([]);
+  const [conversacionesValoradas, setConversacionesValoradas]=useState([]);
   console.log(metricasLocales)
 
   useEffect(() => {
-    const cargarDatos = async () => {
-      try {
-        const datos = await ServicioLecturaConversacion.obtenerConversaciones();
-        setConversaciones(datos);
-        console.log(datos);
-      } catch (error) {
-        console.error('Error cargando conversaciones:', error);
-      }
-    };
-    cargarDatos();
-  }, []);
+  const cargarDatos = async () => {
+    try {
+      const datos = await ServicioLecturaConversacion.obtenerConversacionesTest();
+      setConversaciones(datos);
+      console.log(datos.data);
+
+      const noValoradas = datos.data.filter((conv) => conv.metrics === null);
+      setConversacionesNoValoradas(noValoradas);
+      
+      console.log('Conversaciones no valoradas:', noValoradas);
+    } catch (error) {
+      console.error('Error cargando conversaciones:', error);
+    }
+  };
+  cargarDatos();
+}, []);
+
 
   // Cuando cambia la conversación, inicializamos las métricas locales con las del JSON
   useEffect(() => {
-    setMetricasLocales(metricas || {
-      metric_1: 5,
-      metric_2: 5,
-      metric_3: 5,
-      metric_4: 5,
-    });
+    setMetricasLocales(metricas || null);
   }, [conversacion]);
 
+  const seleccionarConversacionAleatorio = () => {  
+    const indiceAleatorio = Math.floor(Math.random() * conversacionesNoValoradas.length);
+    setMensajes(conversacionesNoValoradas[indiceAleatorio].messages);
+  }
   const manejarValoracion = (key, valor) => {
    
   };
 
   const manejarSiguiente = async () => {
-   
+   seleccionarConversacionAleatorio();
   };
 
   return (

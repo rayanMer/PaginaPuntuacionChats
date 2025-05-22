@@ -45,8 +45,11 @@ const response = await axios.patch(`http://localhost:3000/conversations/${String
     return http.get(`/valoraciones/${id}`)
   },
   obtenerConversacionesTest() {
-    return http.get('/conversations_test')
-  }
+    return http.get('/conversations')
+  },
+    guardarValoracion(id,nuevasMetricas) {
+        return http.patch(`/conversations/${id}`, { metrics: nuevasMetricas})
+    },
 };
 
 export default ServicioLecturaConversacion;
