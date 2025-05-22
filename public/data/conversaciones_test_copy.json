@@ -176,13 +176,8 @@
           "content": "Además de dexametasona, vigilar signos neurológicos, controlar náuseas y mantener hidratación. Si empeora, considerar neurocirugía urgente. También debe estar al día con vacunas básicas si se confirma neoplasia y planifica tratamiento inmunosupresor."
         }
       ],
-      "metrics": {
-        "metric_1": 8,
-        "metric_2": 9,
-        "metric_3": 5,
-        "metric_4": 6
-      },
-      "doctorEmail": "medicaclínica@gmail.com"
+      "metrics": null,
+      "doctorEmail": ""
     },
     {
       "id": "3",
@@ -248,13 +243,8 @@
           "content": "Solo si se acompañan de signos de alarma o hematocrito elevado. Plaquetas <100,000 sin clínica de alarma puede manejarse ambulatoriamente con vigilancia estrecha."
         }
       ],
-      "metrics": {
-        "metric_1": 6,
-        "metric_2": 9,
-        "metric_3": 4,
-        "metric_4": 7
-      },
-      "doctorEmail": "dr.jorge.infectologia@gmail.com"
+      "metrics": null,
+      "doctorEmail": ""
     },
     {
       "id": "4",
@@ -280,13 +270,8 @@
           "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
         }
       ],
-      "metrics": {
-        "metric_1": 1,
-        "metric_2": 1,
-        "metric_3": 1,
-        "metric_4": 1
-      },
-      "doctorEmail": "rayanoujda708@gmail.com"
+      "metrics": null,
+      "doctorEmail": null
     },
     {
       "id": "5",
@@ -318,7 +303,7 @@
         "metric_3": 5,
         "metric_4": 4
       },
-      "doctorEmail": null
+      "doctorEmail": "kerry_copito@gmail.com"
     },
     {
       "id": "6",
@@ -350,7 +335,7 @@
         "metric_3": 6,
         "metric_4": 6
       },
-      "doctorEmail": null
+      "doctorEmail": "susanahoria@gmail.com"
     },
     {
       "id": "7",
@@ -382,7 +367,7 @@
         "metric_3": 3,
         "metric_4": 3
       },
-      "doctorEmail": null
+      "doctorEmail": "pepegarcia@gmail.com"
     },
     {
       "id": "10",
@@ -480,13 +465,8 @@
           "content": "Sí. TAC contrastado de tórax y abdomen superior puede ayudar a descartar neoplasias. También puede considerar broncoscopia si hay dudas o síntomas adicionales."
         }
       ],
-      "metrics": {
-        "metric_1": 2,
-        "metric_2": 2,
-        "metric_3": 2,
-        "metric_4": 2
-      },
-      "doctorEmail": null
+      "metrics": null,
+      "doctorEmail": ""
     },
     {
       "id": "11",
@@ -512,13 +492,8 @@
           "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
         }
       ],
-      "metrics": {
-        "metric_1": 1,
-        "metric_2": 1,
-        "metric_3": 1,
-        "metric_4": 1
-      },
-      "doctorEmail": null
+      "metrics": null,
+      "doctorEmail": ""
     },
     {
       "id": "12",
@@ -544,13 +519,8 @@
           "content": "Altamente sugestivo de TB pulmonar activa. Solicitar baciloscopía y comenzar aislamiento respiratorio."
         }
       ],
-      "metrics": {
-        "metric_1": 3,
-        "metric_2": 3,
-        "metric_3": 2,
-        "metric_4": 1
-      },
-      "doctorEmail": "doctor963@clinica.com"
+      "metrics": null,
+      "doctorEmail": ""
     },
     {
       "id": "13",
@@ -576,13 +546,8 @@
           "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
         }
       ],
-      "metrics": {
-        "metric_1": 3,
-        "metric_2": 6,
-        "metric_3": 7,
-        "metric_4": 3
-      },
-      "doctorEmail": null
+      "metrics": null,
+      "doctorEmail": ""
     }
   ]
 }
