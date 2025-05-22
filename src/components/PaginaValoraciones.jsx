@@ -37,13 +37,11 @@ export default function PaginaValoraciones() {
     cargarDatos();
   }, []);
 
-  // Función para seleccionar una conversación no valorada aleatoriamente
   const seleccionarConversacionAleatoria = (lista) => {
     const indice = Math.floor(Math.random() * lista.length);
     return lista[indice];
   };
 
-  // Validación: ¿todas las métricas están completas?
   const estaValoradaCompletamente = () => {
     return (
       metricasLocales.metric_1 != null &&
