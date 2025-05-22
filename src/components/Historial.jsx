@@ -19,7 +19,7 @@ const Historial = () => {
   }, []);
 
   return (
-    <div className="historial-container bg-[var(--color-light-green)] h-screen grid grid-rows-12">
+    <div className="historial-container bg-[var(--color-light-green)] min-h-screen grid grid-rows-12">
       <div className="row-start-2 col-span-11 row-span-11 grid grid-rows-12">
         <div className="flex flex-row justify-start ml-15 gap-x-10">
           <span className="bg-[var(--color-dark-green)] w-15 h-8 items-center text-white px-2 py-1 rounded hover:bg-emerald-800 hover:text-gray-200 transition cursor-pointer">
