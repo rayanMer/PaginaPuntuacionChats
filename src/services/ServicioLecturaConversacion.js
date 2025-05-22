@@ -43,6 +43,9 @@ const response = await axios.patch(`http://localhost:3000/conversations/${String
 
   obtenerValoracionesPorId(id) {
     return http.get(`/valoraciones/${id}`)
+  },
+  obtenerConversacionesTest() {
+    return http.get('/conversations_test')
   }
 };
 
