@@ -19,3 +19,16 @@ export const mostrarAlertaConfirmacion = async (
     })
   return resultado.isConfirmed;
 }
+
+export const mostrarAlerta = (
+    titulo, mensaje, tipo
+) => {
+    Swal.fire({
+        title: titulo,
+        text: mensaje,
+        icon: tipo,
+        customClass: {
+            popup: 'sweet-alert'
+        }
+    })
+}
