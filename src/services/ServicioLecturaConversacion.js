@@ -22,19 +22,7 @@ const ServicioLecturaConversacion = {
       console.error('Error al buscar la conversación por ID:', error);
       return null;
     }
-  },
-
-  async guardarMetricas(id, nuevasMetricas) {
-  try {
-const response = await axios.patch(`http://localhost:3000/conversations/${String(id)}`, {
-  metrics: nuevasMetricas
-});
-    return response.data;
-  } catch (error) {
-    console.error('Error al guardar métricas:', error);
-    throw error;
   }
-}
 ,
 
   obtenerValoracionesPorUsuario(user) {
@@ -47,8 +35,8 @@ const response = await axios.patch(`http://localhost:3000/conversations/${String
   obtenerConversacionesTest() {
     return http.get('/conversations')
   },
-    guardarValoracion(id,nuevasMetricas) {
-        return http.patch(`/conversations/${id}`, { metrics: nuevasMetricas})
+    guardarValoracion(id,nuevasMetricas,email) {
+        return http.patch(`/conversations/${id}`, { metrics: nuevasMetricas,doctorEmail:email })
     },
 };
 

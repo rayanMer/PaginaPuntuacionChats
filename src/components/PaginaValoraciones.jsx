@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion';
 import PanelConversacion from './PaginaValoraciones/PanelConversacion';
 import PanelMetricas from './PaginaValoraciones/PanelMetricas';
-
+import { useAuth } from '../services/login/AuthProvider';
 export default function PaginaValoraciones() {
   const [conversaciones, setConversaciones] = useState([]);
   const [conversacionesNoValoradas, setConversacionesNoValoradas] = useState([]);
   const [conversacionActual, setConversacionActual] = useState(null);
   const [mensajes, setMensajes] = useState([]);
   const [metricasLocales, setMetricasLocales] = useState({});
+  const {email} = useAuth()
 
   // Cargar datos al montar el componente
   useEffect(() => {
@@ -66,7 +67,7 @@ export default function PaginaValoraciones() {
         metric_4: metricasLocales.metric_4
       };
       console.log(conversacionActual.id)
-      await ServicioLecturaConversacion.guardarValoracion(conversacionActual.id, nuevasMetricas);
+      await ServicioLecturaConversacion.guardarValoracion(conversacionActual.id, nuevasMetricas,email);
 
       const nuevasNoValoradas = conversacionesNoValoradas.filter(
         conv => conv.id !== conversacionActual.id

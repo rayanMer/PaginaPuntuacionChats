@@ -281,12 +281,12 @@
         }
       ],
       "metrics": {
-        "metric_1": 5,
-        "metric_2": 5,
-        "metric_3": 5,
-        "metric_4": 5
+        "metric_1": 1,
+        "metric_2": 1,
+        "metric_3": 1,
+        "metric_4": 1
       },
-      "doctorEmail": null
+      "doctorEmail": "rayanoujda708@gmail.com"
     },
     {
       "id": "5",
