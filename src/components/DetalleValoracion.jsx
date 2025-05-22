@@ -9,8 +9,9 @@ const DetalleValoracion = () => {
   const [valoracion, setValoracion] = useState([]);
 
   useEffect(() => {
-    ServicioLecturaConversacion.obtenerValoracionesPorId(id)
+    ServicioLecturaConversacion.getConversacionPorId(id)
       .then((response) => {
+        console.log(response.data)
         setValoracion(response.data);
       })
       .catch((error) =>
@@ -27,12 +28,13 @@ const DetalleValoracion = () => {
   return (
     <div className="min-h-screen bg-green-100 p-6">
       {/* Header */}
+      
       <div className="flex justify-start items-center mb-6 gap-x-15">
         <span className="bg-[var(--color-dark-green)] w-15 h-8 items-center text-white px-2 py-1 rounded hover:bg-emerald-800 hover:text-gray-200 transition cursor-pointer">
             <Link to={"/historial"}>Volver</Link>
           </span>
         <h1 className="text-2xl font-bold">
-          Valoración de los chats por: medico1@gmail.com
+          Valoración de los chats por: {/*valoracion.doctorEmail} */}
         </h1>
       </div>
 

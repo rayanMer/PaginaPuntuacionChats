@@ -32,12 +32,17 @@ const ServicioLecturaConversacion = {
   obtenerValoracionesPorId(id) {
     return http.get(`/valoraciones/${id}`)
   },
+  
   obtenerConversacionesTest() {
     return http.get('/conversations')
   },
     guardarValoracion(id,nuevasMetricas,email) {
         return http.patch(`/conversations/${id}`, { metrics: nuevasMetricas,doctorEmail:email })
     },
+      
+  getConversacionPorId(id) {
+    return http.get(`/conversations?id=${id}`)
+  },
 };
 
 export default ServicioLecturaConversacion;
