@@ -93,8 +93,8 @@ export default function PaginaValoraciones() {
   };
 
   return (
-    <div className="min-h-screen bg-lightest-green">
-      <div className="flex py-5 gap-15 justify-center">
+    <div className="h-screen bg-lightest-green">
+      <div className="flex flex-col md:flex-row py-5 px-10 gap-15 justify-center min-h-170">
         {/* Panel de conversación */}
         <PanelConversacion mensajes={mensajes} />
 

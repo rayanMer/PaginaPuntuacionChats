@@ -12,7 +12,8 @@ const PanelConversacion = ({mensajes}) => {
     }
 
     return (
-        <div className="max-h-190 min-w-250 bg-white rounded-lg shadow-lg px-10 pt-10 pb-5
+        <div className="min-h-100 max-w-200 md:w-250 xl:w-500
+        bg-white rounded-lg shadow-lg px-10 pt-10 pb-5
         flex flex-col justify-start items-start gap-4 overflow-y-scroll">
             {
                 (
