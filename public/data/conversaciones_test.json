@@ -582,7 +582,16 @@
         "metric_3": 7,
         "metric_4": 3
       },
-      "doctorEmail": null
+      "doctorEmail": "medico@gmail.com"
+    }
+  ], "doctores": [
+    {
+      "email": "soyunemail@gmail.com",
+      "password": "123456"
+    },
+    {
+      "email": "medico@gmail.com",
+      "password": "123123"
     }
   ]
 }
