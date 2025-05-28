@@ -545,10 +545,10 @@
         }
       ],
       "metrics": {
-        "metric_1": 3,
-        "metric_2": 3,
+        "metric_1": 2,
+        "metric_2": 2,
         "metric_3": 2,
-        "metric_4": 1
+        "metric_4": 2
       },
       "doctorEmail": "kerry@gmail.com"
     },
