@@ -4,8 +4,6 @@ import ServicioLecturaConversacion from '../services/ServicioLecturaConversacion
 import PanelConversacion from './PaginaValoraciones/PanelConversacion';
 import PanelMetricas from './PaginaValoraciones/PanelMetricas';
 import { useAuth } from '../services/login/AuthProvider';
-import { mostrarAlerta } from "../utils/sweetAlerts"
-
 export default function PaginaValoraciones() {
   const [conversaciones, setConversaciones] = useState([]);
   const [conversacionesNoValoradas, setConversacionesNoValoradas] = useState([]);
@@ -39,13 +37,11 @@ export default function PaginaValoraciones() {
     cargarDatos();
   }, []);
 
-  // Función para seleccionar una conversación no valorada aleatoriamente
   const seleccionarConversacionAleatoria = (lista) => {
     const indice = Math.floor(Math.random() * lista.length);
     return lista[indice];
   };
 
-  // Validación: ¿todas las métricas están completas?
   const estaValoradaCompletamente = () => {
     return (
       metricasLocales.metric_1 != null &&
@@ -57,7 +53,7 @@ export default function PaginaValoraciones() {
 
   const manejarSiguiente = async () => {
     if (!estaValoradaCompletamente()) {
-      mostrarAlerta("", "Por favor, rellene todas las métricas antes de continuar", "warning")
+      alert('Debes completar todas las métricas antes de continuar.');
       return;
     }
 
@@ -77,7 +73,7 @@ export default function PaginaValoraciones() {
       setConversacionesNoValoradas(nuevasNoValoradas);
 
       if (nuevasNoValoradas.length === 0) {
-        mostrarAlerta("", "¡Has valorado todas las conversaciones!", "success")
+        alert('¡Has valorado todas las conversaciones!');
         setConversacionActual(null);
         setMensajes([]);
         setMetricasLocales({});
