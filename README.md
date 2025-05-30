@@ -69,4 +69,4 @@ Link al Figma: [https://www.figma.com/design/4xiukW0XyofFgKi6UZvodn/Feedback-Cha
 
 - Guardamos chat de ejemplo y usuarios de prueba en una base de datos MongoDB.
     
-- Se utilizara una APi creada en Python para acceder a esta informacion.
+- Se utilizara una API creada en Python para acceder a esta informacion.
