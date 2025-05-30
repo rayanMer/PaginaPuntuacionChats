@@ -584,7 +584,7 @@
       },
       "doctorEmail": "medico@gmail.com"
     }
-  ], "doctores": [
+  ], "users": [
     {
       "email": "soyunemail@gmail.com",
       "password": "123456"
