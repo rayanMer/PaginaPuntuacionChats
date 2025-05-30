@@ -3,7 +3,7 @@ import http from "./axios/http-axios"
 const ServicioAuth = {
   async login(email, password) {
     try {
-      const { data } = await http.get(`/doctores?email=${email}`)
+      const { data } = await http.get(`/users?email=${email}`)
       if (data.length === 0) {
         throw new Error("Usuario no encontrado")
       }
