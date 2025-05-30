@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Optional, List
+from typing import Optional, List, Any
 
 # Message schema
 class Message(BaseModel):
@@ -29,3 +29,13 @@ class Conversation(BaseModel):
 class User(BaseModel):
     email: str
     password: str
+
+# Schema for the update conversations
+class UpdateConversation(BaseModel):
+    messages: Optional[List[Message]] = None
+    metrics: Optional[Metrics] = None
+    doctorEmail: Optional[str] = None
+    id: Optional[str] = None
+
+    class Config:
+        extra = "forbid"
