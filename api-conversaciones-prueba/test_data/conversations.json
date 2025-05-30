@@ -1,0 +1,536 @@
+[
+    {
+      "id": "1",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Tengo un paciente masculino de 62 años con disnea progresiva, tos seca y pérdida de peso en los últimos 3 meses."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene antecedentes médicos relevantes? ¿Fumador o exposición ocupacional? ¿Alguna imagen realizada?"
+        },
+        {
+          "role": "user",
+          "content": "Fue fumador hasta hace 5 años. Trabajó en construcción. No antecedentes médicos mayores. Se realizó una radiografía de tórax que mostró infiltrados intersticiales bilaterales."
+        },
+        {
+          "role": "assistant",
+          "content": "¿La disnea es de esfuerzo o también en reposo? ¿Satura adecuadamente en reposo? ¿Hay estertores basales o dedos en palillo de tambor?"
+        },
+        {
+          "role": "user",
+          "content": "Disnea inicialmente de esfuerzo, pero ahora también en reposo. Saturación 90% en aire ambiente. Tiene estertores crepitantes bibasales y dedos en palillo."
+        },
+        {
+          "role": "assistant",
+          "content": "Esto sugiere una enfermedad pulmonar intersticial. Dada la edad, historia ocupacional y radiografía, fibrosis pulmonar idiopática es posible. ¿Se ha hecho una TAC de alta resolución?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, la TAC muestra un patrón en panal de abeja subpleural y predominio basal."
+        },
+        {
+          "role": "assistant",
+          "content": "El patrón en panal de abeja subpleural en un hombre de edad avanzada exfumador es característico de fibrosis pulmonar idiopática (FPI). ¿Se ha evaluado función pulmonar?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, la espirometría muestra patrón restrictivo severo y DLCO reducida al 40% del valor predicho."
+        },
+        {
+          "role": "assistant",
+          "content": "Eso confirma compromiso funcional. Es importante derivar a neumología para valorar tratamiento antifibrótico con pirfenidona o nintedanib. También se debe evaluar para oxigenoterapia domiciliaria."
+        },
+        {
+          "role": "user",
+          "content": "¿Qué pronóstico tiene con tratamiento antifibrótico? ¿Vale la pena iniciarlo en este punto?"
+        },
+        {
+          "role": "assistant",
+          "content": "Los antifibróticos pueden ralentizar la progresión de la enfermedad, aunque no la revierten. Si aún está funcionalmente activo, puede beneficiarse. El pronóstico sin tratamiento es 3-5 años, con tratamiento puede prolongarse ligeramente y mejorar calidad de vida."
+        },
+        {
+          "role": "user",
+          "content": "¿Hay que hacer biopsia pulmonar para confirmar el diagnóstico?"
+        },
+        {
+          "role": "assistant",
+          "content": "No necesariamente. Si el patrón radiológico es típico de FPI y el contexto clínico concuerda, no se requiere biopsia. Se puede hacer el diagnóstico clínico-radiológico con MDT (discusión multidisciplinaria)."
+        },
+        {
+          "role": "user",
+          "content": "Ok. ¿Debo iniciar esteroides mientras se deriva al neumólogo?"
+        },
+        {
+          "role": "assistant",
+          "content": "En FPI, los esteroides no son eficaces y pueden ser perjudiciales. Se deben evitar salvo que se sospeche otra causa inflamatoria o autoinmune. No los inicie si el diagnóstico de FPI es probable."
+        },
+        {
+          "role": "user",
+          "content": "¿Y qué vacunas debo asegurarme que reciba?"
+        },
+        {
+          "role": "assistant",
+          "content": "Debe estar vacunado contra influenza anual, neumococo (conjugada y polisacárida según edad) y COVID-19. También considerar vacuna contra pertussis si no ha recibido refuerzo reciente."
+        },
+        {
+          "role": "user",
+          "content": "Gracias. También mencionó pérdida de peso. ¿Debo descartar cáncer?"
+        },
+        {
+          "role": "assistant",
+          "content": "Buena observación. Aunque la pérdida de peso puede ser por enfermedad crónica, siempre debe considerarse cáncer en un exfumador. ¿Se ha hecho TAC de tórax con contraste o marcadores tumorales?"
+        },
+        {
+          "role": "user",
+          "content": "No aún. Solo TAC de alta resolución. ¿Sugieres repetir con contraste?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sí. TAC contrastado de tórax y abdomen superior puede ayudar a descartar neoplasias. También puede considerar broncoscopia si hay dudas o síntomas adicionales."
+        }
+      ],
+      "metrics": {
+        "metric_1": 7,
+        "metric_2": 10,
+        "metric_3": 4,
+        "metric_4": 5
+      },
+      "doctorEmail": "soyunemail@gmail.com"
+    },
+    {
+      "id": "2",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Tengo una paciente femenina de 45 años con cefalea persistente, visión borrosa y vómitos en las mañanas desde hace 2 semanas."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene antecedentes personales de migrañas, hipertensión o enfermedades neurológicas? ¿Hay fiebre, rigidez de nuca o pérdida de conciencia?"
+        },
+        {
+          "role": "user",
+          "content": "No antecedentes neurológicos. Sin fiebre ni rigidez. Presión normal. No ha perdido la conciencia, pero refiere somnolencia creciente."
+        },
+        {
+          "role": "assistant",
+          "content": "La cefalea matutina con vómitos y visión borrosa sugiere hipertensión intracraneal. ¿Se ha realizado una imagen cerebral?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, se hizo una TAC que mostró una masa hipodensa en lóbulo frontal derecho con efecto de masa y edema perilesional."
+        },
+        {
+          "role": "assistant",
+          "content": "Eso sugiere una lesión expansiva. ¿Se ha solicitado una resonancia magnética para caracterizar mejor la masa? ¿Hay signos de herniación?"
+        },
+        {
+          "role": "user",
+          "content": "Se hizo RMN con gadolinio. Muestra una lesión heterogénea de 3.2 cm con realce en anillo, edema vasogénico y desplazamiento de línea media de 4 mm."
+        },
+        {
+          "role": "assistant",
+          "content": "Una lesión con realce en anillo y edema en paciente inmunocompetente puede ser un glioblastoma. ¿Se ha derivado a neurocirugía? ¿Se administraron corticosteroides?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, ya está con dexametasona 8 mg cada 8h. Se programó biopsia estereotáxica esta semana."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfecto. Es esencial controlar la presión intracraneal. Esté atenta a deterioro neurológico. ¿Está recibiendo profilaxis para anticonvulsivos?"
+        },
+        {
+          "role": "user",
+          "content": "No, aún no. ¿Sugieres iniciar alguno profilácticamente?"
+        },
+        {
+          "role": "assistant",
+          "content": "En lesiones cerebrales con masa y edema perilesional, puede considerarse levetiracetam profiláctico hasta biopsia y estabilización. Evaluar riesgo-beneficio con neuro."
+        },
+        {
+          "role": "user",
+          "content": "¿Qué otros diagnósticos diferenciales considerarías?"
+        },
+        {
+          "role": "assistant",
+          "content": "Absceso cerebral (si inmunocomprometida), metástasis (si hay neoplasia primaria), linfoma del SNC. La edad y localización hacen glioblastoma más probable, pero la biopsia será clave."
+        },
+        {
+          "role": "user",
+          "content": "¿Se puede hacer algo mientras esperamos resultado de patología?"
+        },
+        {
+          "role": "assistant",
+          "content": "Además de dexametasona, vigilar signos neurológicos, controlar náuseas y mantener hidratación. Si empeora, considerar neurocirugía urgente. También debe estar al día con vacunas básicas si se confirma neoplasia y planifica tratamiento inmunosupresor."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "3",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente masculino de 28 años con fiebre, mialgias intensas, cefalea retroocular y erupción maculopapular desde hace 3 días. Viene de zona endémica de dengue."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Ha presentado sangrado, dolor abdominal, vómitos persistentes o signos de fuga capilar? ¿Cuál es el estado de hidratación y presión arterial?"
+        },
+        {
+          "role": "user",
+          "content": "No hay sangrados ni dolor abdominal. Presión normal, bien hidratado, pero refiere cansancio extremo."
+        },
+        {
+          "role": "assistant",
+          "content": "Puede tratarse de dengue sin signos de alarma. ¿Se han solicitado hemograma y pruebas de función hepática? ¿Plaquetas y hematocrito?"
+        },
+        {
+          "role": "user",
+          "content": "Sí. Plaquetas en 120,000, hematocrito 44% (sin comparativo previo), GOT y GPT elevadas x2. Leucopenia leve."
+        },
+        {
+          "role": "assistant",
+          "content": "Compatible con dengue. Observar evolución de plaquetas y hematocrito cada 24h. Aumentar vigilancia si hay signos de alarma. ¿Está hidratándose por vía oral?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, buena tolerancia oral. Se le indicó paracetamol y reposo domiciliario."
+        },
+        {
+          "role": "assistant",
+          "content": "Correcto. Evitar AINES. Reforzar signos de alarma: sangrado, vómitos, dolor abdominal, letargo, hepatomegalia, dificultad respiratoria. Si aparecen, hospitalizar."
+        },
+        {
+          "role": "user",
+          "content": "¿Recomiendas control diario o puede ser cada 48h si permanece estable?"
+        },
+        {
+          "role": "assistant",
+          "content": "Idealmente control clínico y de laboratorio diario en fase crítica (días 3-7). Si permanece estable tras día 7, puede espaciarse."
+        },
+        {
+          "role": "user",
+          "content": "¿Es necesario confirmar con prueba NS1 o IgM/IgG?"
+        },
+        {
+          "role": "assistant",
+          "content": "NS1 útil en primeros 5 días. Si está disponible, puede confirmar. IgM aparece tras día 5. El diagnóstico es clínico si hay brote local y hallazgos típicos, pero la confirmación serológica es ideal para vigilancia epidemiológica."
+        },
+        {
+          "role": "user",
+          "content": "¿Debo considerar hospitalización si las plaquetas bajan a menos de 100,000?"
+        },
+        {
+          "role": "assistant",
+          "content": "Solo si se acompañan de signos de alarma o hematocrito elevado. Plaquetas <100,000 sin clínica de alarma puede manejarse ambulatoriamente con vigilancia estrecha."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "4",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
+        },
+        {
+          "role": "user",
+          "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
+        },
+        {
+          "role": "assistant",
+          "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "5",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente femenina de 36 años con tos crónica, pérdida de peso y sudoración nocturna."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tabaquismo, contacto con TB, imagen pulmonar disponible?"
+        },
+        {
+          "role": "user",
+          "content": "No fuma. Contacto con caso de TB hace 6 meses. RX muestra cavitación en lóbulo superior derecho."
+        },
+        {
+          "role": "assistant",
+          "content": "Altamente sugestivo de TB pulmonar activa. Solicitar baciloscopía y comenzar aislamiento respiratorio."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "6",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "¿Qué antibiótico recomiendas para una neumonía adquirida en la comunidad?"
+        },
+        {
+          "role": "assistant",
+          "content": "Para adultos sanos, amoxicilina o doxiciclina son buenas opciones. En pacientes con comorbilidades, se puede considerar amoxicilina-clavulánico más macrólido."
+        },
+        {
+          "role": "user",
+          "content": "¿Y en caso de alergia a penicilina?"
+        },
+        {
+          "role": "assistant",
+          "content": "Doxiciclina o una fluoroquinolona respiratoria como levofloxacino podrían ser adecuadas, dependiendo del perfil del paciente."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "7",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Tengo un paciente pediátrico con fiebre persistente de 5 días. ¿Qué sugerencias tienes?"
+        },
+        {
+          "role": "assistant",
+          "content": "Se debe considerar enfermedad de Kawasaki o una infección viral prolongada. ¿Tiene otros síntomas como exantema, conjuntivitis o cambios en la lengua?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, presenta lengua aframbuesada y ojos enrojecidos."
+        },
+        {
+          "role": "assistant",
+          "content": "Los síntomas son consistentes con enfermedad de Kawasaki. Recomiendo referir al paciente a un centro especializado para evaluación y posible tratamiento con inmunoglobulina intravenosa."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "8",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Tengo un paciente masculino de 62 años con disnea progresiva, tos seca y pérdida de peso en los últimos 3 meses."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene antecedentes médicos relevantes? ¿Fumador o exposición ocupacional? ¿Alguna imagen realizada?"
+        },
+        {
+          "role": "user",
+          "content": "Fue fumador hasta hace 5 años. Trabajó en construcción. No antecedentes médicos mayores. Se realizó una radiografía de tórax que mostró infiltrados intersticiales bilaterales."
+        },
+        {
+          "role": "assistant",
+          "content": "¿La disnea es de esfuerzo o también en reposo? ¿Satura adecuadamente en reposo? ¿Hay estertores basales o dedos en palillo de tambor?"
+        },
+        {
+          "role": "user",
+          "content": "Disnea inicialmente de esfuerzo, pero ahora también en reposo. Saturación 90% en aire ambiente. Tiene estertores crepitantes bibasales y dedos en palillo."
+        },
+        {
+          "role": "assistant",
+          "content": "Esto sugiere una enfermedad pulmonar intersticial. Dada la edad, historia ocupacional y radiografía, fibrosis pulmonar idiopática es posible. ¿Se ha hecho una TAC de alta resolución?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, la TAC muestra un patrón en panal de abeja subpleural y predominio basal."
+        },
+        {
+          "role": "assistant",
+          "content": "El patrón en panal de abeja subpleural en un hombre de edad avanzada exfumador es característico de fibrosis pulmonar idiopática (FPI). ¿Se ha evaluado función pulmonar?"
+        },
+        {
+          "role": "user",
+          "content": "Sí, la espirometría muestra patrón restrictivo severo y DLCO reducida al 40% del valor predicho."
+        },
+        {
+          "role": "assistant",
+          "content": "Eso confirma compromiso funcional. Es importante derivar a neumología para valorar tratamiento antifibrótico con pirfenidona o nintedanib. También se debe evaluar para oxigenoterapia domiciliaria."
+        },
+        {
+          "role": "user",
+          "content": "¿Qué pronóstico tiene con tratamiento antifibrótico? ¿Vale la pena iniciarlo en este punto?"
+        },
+        {
+          "role": "assistant",
+          "content": "Los antifibróticos pueden ralentizar la progresión de la enfermedad, aunque no la revierten. Si aún está funcionalmente activo, puede beneficiarse. El pronóstico sin tratamiento es 3-5 años, con tratamiento puede prolongarse ligeramente y mejorar calidad de vida."
+        },
+        {
+          "role": "user",
+          "content": "¿Hay que hacer biopsia pulmonar para confirmar el diagnóstico?"
+        },
+        {
+          "role": "assistant",
+          "content": "No necesariamente. Si el patrón radiológico es típico de FPI y el contexto clínico concuerda, no se requiere biopsia. Se puede hacer el diagnóstico clínico-radiológico con MDT (discusión multidisciplinaria)."
+        },
+        {
+          "role": "user",
+          "content": "Ok. ¿Debo iniciar esteroides mientras se deriva al neumólogo?"
+        },
+        {
+          "role": "assistant",
+          "content": "En FPI, los esteroides no son eficaces y pueden ser perjudiciales. Se deben evitar salvo que se sospeche otra causa inflamatoria o autoinmune. No los inicie si el diagnóstico de FPI es probable."
+        },
+        {
+          "role": "user",
+          "content": "¿Y qué vacunas debo asegurarme que reciba?"
+        },
+        {
+          "role": "assistant",
+          "content": "Debe estar vacunado contra influenza anual, neumococo (conjugada y polisacárida según edad) y COVID-19. También considerar vacuna contra pertussis si no ha recibido refuerzo reciente."
+        },
+        {
+          "role": "user",
+          "content": "Gracias. También mencionó pérdida de peso. ¿Debo descartar cáncer?"
+        },
+        {
+          "role": "assistant",
+          "content": "Buena observación. Aunque la pérdida de peso puede ser por enfermedad crónica, siempre debe considerarse cáncer en un exfumador. ¿Se ha hecho TAC de tórax con contraste o marcadores tumorales?"
+        },
+        {
+          "role": "user",
+          "content": "No aún. Solo TAC de alta resolución. ¿Sugieres repetir con contraste?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sí. TAC contrastado de tórax y abdomen superior puede ayudar a descartar neoplasias. También puede considerar broncoscopia si hay dudas o síntomas adicionales."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "9",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
+        },
+        {
+          "role": "user",
+          "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
+        },
+        {
+          "role": "assistant",
+          "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "9",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente femenina de 36 años con tos crónica, pérdida de peso y sudoración nocturna."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tabaquismo, contacto con TB, imagen pulmonar disponible?"
+        },
+        {
+          "role": "user",
+          "content": "No fuma. Contacto con caso de TB hace 6 meses. RX muestra cavitación en lóbulo superior derecho."
+        },
+        {
+          "role": "assistant",
+          "content": "Altamente sugestivo de TB pulmonar activa. Solicitar baciloscopía y comenzar aislamiento respiratorio."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    },
+    {
+      "id": "10",
+      "messages": [
+        {
+          "role": "system",
+          "content": "Eres un chatbot médico diseñado para asistir a doctores con consultas clínicas."
+        },
+        {
+          "role": "user",
+          "content": "Paciente masculino de 55 años con dolor torácico opresivo irradiado a brazo izquierdo de 30 minutos de evolución."
+        },
+        {
+          "role": "assistant",
+          "content": "¿Tiene factores de riesgo cardiovascular? ¿Se ha realizado ECG o troponinas?"
+        },
+        {
+          "role": "user",
+          "content": "Tiene hipertensión, dislipidemia. ECG muestra elevación del ST en derivaciones inferiores."
+        },
+        {
+          "role": "assistant",
+          "content": "Sospecha de infarto inferior. Activar código IAM si disponible y trasladar a unidad coronaria."
+        }
+      ],
+      "metrics": null,
+      "doctorEmail": ""
+    }
+]
