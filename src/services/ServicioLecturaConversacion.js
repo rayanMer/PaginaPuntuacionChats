@@ -1,11 +1,10 @@
-import axios from "axios";
 import http from './axios/http-axios';
 
 const ServicioLecturaConversacion = {
   async obtenerConversaciones() {
     try {
       // Obtener todas las conversaciones
-      const respuesta = await axios.get('http://localhost:3000/conversations');
+      const respuesta =  http.get('/conversations');
       return respuesta.data;
     } catch (error) {
       console.error('Error al cargar las conversaciones:', error);
@@ -16,7 +15,7 @@ const ServicioLecturaConversacion = {
   async getPorId(id) {
     try {
       // Obtener conversación por id
-      const respuesta = await axios.get(`http://localhost:3000/conversations/${id}`);
+      const respuesta =  http.get(`/conversations/${id}`);
       return respuesta.data;
     } catch (error) {
       console.error('Error al buscar la conversación por ID:', error);
