@@ -67,6 +67,6 @@ Link al Figma: [https://www.figma.com/design/4xiukW0XyofFgKi6UZvodn/Feedback-Cha
 
 ### Backend (para testing).
 
-- Guardamos chat de ejemplo y tipos de valoración en unos JSON.
+- Guardamos chat de ejemplo y usuarios de prueba en una base de datos MongoDB.
     
-- Se utilizaria Json-server para API.
+- Se utilizara una API creada en Python para acceder a esta informacion.
